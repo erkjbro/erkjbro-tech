@@ -1,24 +1,33 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+
+import Home from './pages/Home/Home';
 import './App.css';
 
-const routes = (
-  <>
-    <h1>Erik J Brown Tech LLC</h1>
-    <p className="Alert">
-      This website currently under development.
-      <br />
-      Visit <a href="https://erkjbro.github.io/">erkjbro.github.io</a> for
-      my old portfolio site.
-    </p>
-  </>
-);
-
 const App = () => {
+  let routes;
+
+  routes = (
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>]
+      <Redirect to="/" />
+    </Switch>
+  );
+
   return (
-    <div className="App">
-      <main>
-        {routes}
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <main>
+          {routes}
+        </main>
+      </div>
+    </Router>
   );
 };
 
