@@ -10,4 +10,4 @@ const NavLinks = () => (
   </ul>
 );
 
-return NavLinks;
+export default NavLinks;

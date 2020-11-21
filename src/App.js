@@ -5,6 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 
+import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import Home from './pages/Home/Home';
 import './App.css';
 
@@ -22,11 +23,10 @@ const App = () => {
 
   return (
     <Router>
-      <div className="App">
-        <main>
-          {routes}
-        </main>
-      </div>
+      <MainNavigation />
+      <main>
+        {routes}
+      </main>
     </Router>
   );
 };
