@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@import './styles/colors';
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  background: #262626;
+  background: map-get($colors, dark);
 }
 
 code {
