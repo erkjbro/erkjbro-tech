@@ -8,6 +8,10 @@ import {
 import {
   Snackbar
 } from '@material-ui/core';
+import {
+  Alert,
+  AlertTitle
+} from '@material-ui/lab';
 
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import Home from './pages/Home/Home';
@@ -51,10 +55,25 @@ const App = () => {
           horizontal: 'center'
         }}
         open={open}
-        autoHideDuration={6000}
         onClose={handleClose}
-        message='Information!'
-      />
+      >
+        <Alert
+          elevation={6}
+          variant="filled"
+          onClose={handleClose}
+          severity="info"
+        >
+          <AlertTitle>Info</AlertTitle>
+          This website is currently under development.
+          <br/>
+          Visit <a
+            href="https://erkjbro.github.io/"
+            style={{
+              color: 'white'
+            }}
+          >erkjbro.github.io</a> for my old portfolio site.
+        </Alert>
+      </Snackbar>
     </Router>
   );
 };
