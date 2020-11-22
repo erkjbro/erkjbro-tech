@@ -5,7 +5,10 @@ import './NavLinks.scss';
 const NavLinks = () => (
   <ul className="nav-links">
     <li>
-      <NavLink to="/" exact>HOME</NavLink>
+      <NavLink to="/" exact>Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/tech" exact>Tech</NavLink>
     </li>
   </ul>
 );
