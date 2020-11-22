@@ -1,4 +1,4 @@
-import './MainHeader.css';
+import './MainHeader.scss';
 
 const MainHeader = (props) => (
   <header className="main-header">

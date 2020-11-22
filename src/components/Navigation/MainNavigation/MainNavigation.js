@@ -5,7 +5,7 @@ import Backdrop from '../../UIElements/Backdrop/Backdrop';
 import MainHeader from '../MainHeader/MainHeader';
 import NavLinks from '../NavLinks/NavLinks';
 import SideDrawer from '../SideDrawer/SideDrawer';
-import './MainNavigation.css';
+import './MainNavigation.scss';
 
 const MainNavigation = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);

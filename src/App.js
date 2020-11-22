@@ -7,7 +7,7 @@ import {
 
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import Home from './pages/Home/Home';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   let routes;

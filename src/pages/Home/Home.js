@@ -1,4 +1,4 @@
-import './Home.css';
+import './Home.scss';
 
 const Home = () => (
   <div className="Home">
