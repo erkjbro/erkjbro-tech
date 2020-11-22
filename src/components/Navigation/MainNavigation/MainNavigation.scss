@@ -29,7 +29,7 @@
 }
 
 .main-navigation__header-nav {
-  display: block;
+  display: none;
 }
 
 .main-navigation__drawer-nav {
@@ -41,7 +41,7 @@
     display: none;
   }
 
-  .main-navigation__menu-nav {
+  .main-navigation__header-nav {
     display: block;
   }
 }
