@@ -1,34 +1,17 @@
-import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Redirect,
   Switch
 } from 'react-router-dom';
-import {
-  Snackbar
-} from '@material-ui/core';
-import {
-  Alert,
-  AlertTitle
-} from '@material-ui/lab';
 
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
+import SiteAlert from './components/UIElements/SiteAlert/SiteAlert';
 import Home from './pages/Home/Home';
 import Tech from './pages/Tech/Tech';
 import './App.scss';
 
 const App = () => {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setOpen(true);
-    }, 2000);
-  }, []);
-
-  const handleClose = () => setOpen(false);
-
   let routes;
 
   routes = (
@@ -49,31 +32,13 @@ const App = () => {
       <main>
         {routes}
       </main>
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center'
-        }}
-        open={open}
-        onClose={handleClose}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose}
-          severity="info"
-        >
-          <AlertTitle>Info</AlertTitle>
-          This website is currently under development.
-          <br/>
-          Visit <a
-            href="https://erkjbro.github.io/"
-            style={{
-              color: 'white'
-            }}
-          >erkjbro.github.io</a> for my old portfolio site.
-        </Alert>
-      </Snackbar>
+      <SiteAlert>
+        This website is currently under development. <br />
+        Visit <a
+        href="https://erkjbro.github.io/"
+        style={{ color: 'white' }}
+        >erkjbro.github.io</a> for my old portfolio site.
+      </SiteAlert>
     </Router>
   );
 };
