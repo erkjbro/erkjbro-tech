@@ -1,22 +1,16 @@
 @import '../../styles/colors';
 
 .Home {
-  width: fit-content;
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 1.5rem 5rem;
-  background: map-get($colors, light);
-  border-radius: 8px;
-}
-
-.Home h1 {
-  width: fit-content;
+  height: 80vh;
+  width: 100%;
   margin: 0 auto;
-}
+  padding: 1.5rem 0;
+  background: map-get($colors, light);
+  text-align: center;
 
-.Home p {
-  display: inline-block;
-  padding: 1rem;
-  border: 1px solid map-get($colors, error);
-  border-radius: 8px;
+  p {
+    width: 36rem;
+    margin: 1.2rem auto;
+    text-align: left;
+  }
 }

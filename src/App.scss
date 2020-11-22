@@ -1,12 +1,9 @@
 @import './styles/colors';
 
-.App {
-  text-align: center;
+main {
+  margin-top: 4rem;
 }
 
-.Alert {
-  display: inline-block;
-  padding: 1rem;
-  border: 1px solid map-get($colors, error);
-  border-radius: 8px;
+.App {
+  text-align: center;
 }
