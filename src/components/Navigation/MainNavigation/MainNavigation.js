@@ -1,5 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IconButton } from '@material-ui/core';
+import { MenuSharp as MenuSharpIcon } from '@material-ui/icons';
 
 import Backdrop from '../../UIElements/Backdrop/Backdrop';
 import MainHeader from '../MainHeader/MainHeader';
@@ -28,19 +30,22 @@ const MainNavigation = (props) => {
       </SideDrawer>
 
       <MainHeader>
-        <button
-          className="main-navigation__menu-btn"
+        <IconButton
+          aria-label="mobile navigation menu"
           onClick={openDrawerHandler}
         >
-          <span />
-          <span />
-          <span />
-        </button>
+          <MenuSharpIcon
+            color="action"
+            fontSize="large"
+          />
+        </IconButton>
+
         <span className="main-navigation__logo">
           <Link to="/">
             <img src={ejbBlackLogo} alt="Home" />
           </Link>
         </span>
+
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
