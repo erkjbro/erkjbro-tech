@@ -1,11 +1,9 @@
 @import 'styles/colors';
+@import 'styles/variables';
 
 .Home {
-  height: 80vh;
-  width: 100%;
-  margin: 0 auto;
-  background: map-get($colors, light);
-  text-align: center;
+  @extend .page_layout;
+  padding-top: 0;
 
   p {
     max-width: 36rem;

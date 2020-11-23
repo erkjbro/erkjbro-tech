@@ -3,3 +3,12 @@
     @content;
   }
 }
+
+.page_layout {
+  min-height: calc(100vh - 4rem);
+  width: 100vw;
+  margin: 0;
+  padding: 0.5rem 0;
+  background: map-get($colors, light);
+  text-align: center;
+}
