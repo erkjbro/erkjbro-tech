@@ -1,10 +1,5 @@
 @import 'styles/colors';
-
-@mixin media-min-width($width) {
-  @media (min-width: $width) {
-    @content;
-  }
-}
+@import 'styles/variables';
 
 .main-navigation__menu-btn {
   display: flex;

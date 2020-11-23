@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/variables';
 
 .nav-links {
   list-style: none;
@@ -30,7 +31,7 @@
     color: map-get($colors, dark);
   }
 
-  @media (min-width: 40rem) {
+  @include media-min-width(40rem) {
     flex-direction: row;
 
     li {
