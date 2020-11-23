@@ -30,15 +30,17 @@ const MainNavigation = (props) => {
       </SideDrawer>
 
       <MainHeader>
-        <IconButton
-          aria-label="mobile navigation menu"
-          onClick={openDrawerHandler}
-        >
-          <MenuSharpIcon
-            color="action"
-            fontSize="large"
-          />
-        </IconButton>
+        <span className="main-navigation__menu-btn">
+          <IconButton
+            aria-label="mobile navigation menu"
+            onClick={openDrawerHandler}
+          >
+            <MenuSharpIcon
+              color="action"
+              fontSize="large"
+            />
+          </IconButton>
+        </span>
 
         <span className="main-navigation__logo">
           <Link to="/">

@@ -1,5 +1,11 @@
 @import '../../../styles/colors';
 
+.main-navigation__menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .main-navigation__logo {
   height: 100%;
   display: flex;
