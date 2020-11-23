@@ -1,9 +1,19 @@
-@import '../../../styles/colors';
+@import 'styles/colors';
+
+@mixin media-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
 
 .main-navigation__menu-btn {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  @include media-min-width(40rem) {
+    display: none;
+  }
 }
 
 .main-navigation__logo {
@@ -27,18 +37,12 @@
 
 .main-navigation__header-nav {
   display: none;
+
+  @include media-min-width(40rem) {
+    display: block;
+  }
 }
 
 .main-navigation__drawer-nav {
   height: 100%;
-}
-
-@media (min-width: 768px) {
-  .main-navigation__menu-btn {
-    display: none;
-  }
-
-  .main-navigation__header-nav {
-    display: block;
-  }
 }
