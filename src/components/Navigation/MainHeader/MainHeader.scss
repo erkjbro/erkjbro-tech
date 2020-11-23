@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/variables';
 
 .main-header {
   width: 100%;
@@ -12,10 +13,10 @@
   box-shadow: 0 2px 6px map-get($colors, shadow);
   padding: 0 1rem;
   z-index: 5;
-}
 
-@media (min-width: 40rem) {
-  .main-header {
-    justify-content: space-between;
+  @include media-min-width(40rem) {
+    .main-header {
+      justify-content: space-between;
+    }
   }
 }
