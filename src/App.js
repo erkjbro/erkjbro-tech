@@ -33,11 +33,13 @@ const App = () => {
         {routes}
       </main>
       <SiteAlert>
-        This website is currently under development. <br />
+        This website is currently under development.
         Visit <a
-        href="https://erkjbro.github.io/"
-        style={{ color: 'white' }}
-        >erkjbro.github.io</a> for my old portfolio site.
+          href="https://erkjbro.github.io/"
+          style={{ color: 'white' }}
+        >
+          erkjbro.github.io
+        </a> for my old portfolio site.
       </SiteAlert>
     </Router>
   );
