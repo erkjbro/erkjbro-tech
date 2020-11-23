@@ -1,4 +1,4 @@
-@import '../../../styles/colors';
+@import 'styles/colors';
 
 .main-header {
   width: 100%;
@@ -14,7 +14,7 @@
   z-index: 5;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 40rem) {
   .main-header {
     justify-content: space-between;
   }

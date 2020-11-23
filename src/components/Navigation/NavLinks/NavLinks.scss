@@ -1,4 +1,4 @@
-@import '../../../styles/colors';
+@import 'styles/colors';
 
 .nav-links {
   list-style: none;
@@ -29,10 +29,8 @@
     border-color: map-get($colors, dark);
     color: map-get($colors, dark);
   }
-}
 
-@media (min-width: 768px) {
-  .nav-links {
+  @media (min-width: 40rem) {
     flex-direction: row;
 
     li {
