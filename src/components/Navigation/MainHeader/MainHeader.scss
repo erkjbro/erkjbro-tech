@@ -15,8 +15,6 @@
   z-index: 5;
 
   @include media-min-width(40rem) {
-    .main-header {
-      justify-content: space-between;
-    }
+    justify-content: space-between;
   }
 }
