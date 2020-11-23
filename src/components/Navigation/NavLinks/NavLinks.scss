@@ -10,38 +10,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.nav-links li {
-  margin: 1rem;
-}
+  li {
+    margin: 1rem;
+  }
 
-.nav-links a {
-  border: 1px solid transparent;
-  color: map-get($colors, dark);
-  text-decoration: none;
-  padding: 0.5rem;
-}
+  a {
+    border: 1px solid transparent;
+    color: map-get($colors, dark);
+    text-decoration: none;
+    padding: 0.5rem;
+  }
 
-.nav-links a:hover,
-.nav-links a:active,
-.nav-links a.active {
-  background: map-get($colors, primary);
-  border-color: map-get($colors, dark);
-  color: map-get($colors, dark);
+  a:hover,
+  a:active,
+  a.active {
+    background: map-get($colors, primary);
+    border-color: map-get($colors, dark);
+    color: map-get($colors, dark);
+  }
 }
 
 @media (min-width: 768px) {
   .nav-links {
     flex-direction: row;
-  }
 
-  .nav-links li {
-    margin: 0 0.5rem;
-  }
+    li {
+      margin: 0 0.5rem;
+    }
 
-  .nav-links a {
-    color: map-get($colors, light);
-    text-decoration: none;
+    a {
+      color: map-get($colors, light);
+      text-decoration: none;
+    }
   }
 }
