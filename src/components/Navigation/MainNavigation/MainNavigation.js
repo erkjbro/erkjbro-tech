@@ -5,6 +5,7 @@ import Backdrop from '../../UIElements/Backdrop/Backdrop';
 import MainHeader from '../MainHeader/MainHeader';
 import NavLinks from '../NavLinks/NavLinks';
 import SideDrawer from '../SideDrawer/SideDrawer';
+import ejbBlackLogo from '../../../assets/images/ejb-black-logo-v2.png';
 import './MainNavigation.scss';
 
 const MainNavigation = (props) => {
@@ -35,9 +36,11 @@ const MainNavigation = (props) => {
           <span />
           <span />
         </button>
-        <h1 className="main-navigation__title">
-          <Link to="/">Home</Link>
-        </h1>
+        <span className="main-navigation__logo">
+          <Link to="/">
+            <img src={ejbBlackLogo} alt="Home" />
+          </Link>
+        </span>
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
