@@ -8,6 +8,7 @@ import {
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import SiteAlert from './components/UIElements/SiteAlert/SiteAlert';
 import Home from './pages/Home/Home';
+import Bio from './pages/Bio/Bio';
 import Tech from './pages/Tech/Tech';
 import './App.scss';
 
@@ -18,6 +19,9 @@ const App = () => {
     <Switch>
       <Route path="/" exact>
         <Home />
+      </Route>
+      <Route path="/bio" exact>
+        <Bio />
       </Route>
       <Route path="/tech" exact>
         <Tech />
