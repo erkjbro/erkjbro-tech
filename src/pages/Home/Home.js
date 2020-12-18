@@ -1,9 +1,12 @@
-import Header from './Header/Header';
+
+import ejbOrangeLogo from '../../assets/images/ejb-orange-logo-v1.png';
 import './Home.scss';
 
 const Home = () => (
   <div className="Home">
-    <Header />
+    <div className="Header">
+      <img src={ejbOrangeLogo} alt="Erik J Brown" />
+    </div>
 
     <h1>Erik J Brown Tech LLC</h1>
 
