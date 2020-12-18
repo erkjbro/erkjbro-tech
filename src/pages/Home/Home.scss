@@ -3,13 +3,14 @@
 
 .Home {
   @extend .page_layout;
-  padding-top: 0;
+  width: 100%;
 
   p {
-    max-width: 36rem;
+    max-width: 80vw;
     margin: 1.2rem auto;
-    padding: 0 1rem;
+    padding: 0;
     text-align: left;
+    font-size: 1.2rem;
   }
 }
 
