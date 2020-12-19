@@ -34,7 +34,7 @@ const Home = () => (
 
       <p>
         For project management I have been using Jira with kanban boards and also trying Confluence for project documentation.
-        I haven't settled on a time tracking app yet, and just use a pen and a time tracking journal like a savage.
+        I haven't settled on a time tracking app yet, and just use a pen and a time tracking journal.
       </p>
 
       <p>
