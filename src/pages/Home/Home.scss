@@ -3,7 +3,7 @@
 
 .Home {
   @extend .page_layout;
-  background: linear-gradient(to bottom, map-get($colors, secondary), map-get($colors, light) 02%);
+  background: linear-gradient(to bottom, map-get($colors, secondary), map-get($colors, light) 01%);
   width: 100%;
 
   h1 {
