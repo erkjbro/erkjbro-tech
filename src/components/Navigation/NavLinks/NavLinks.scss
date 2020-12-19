@@ -17,8 +17,7 @@
   }
 
   a {
-    border-bottom: 4px solid transparent;
-    border-radius: 8px;
+    border: 4px solid transparent;
     color: map-get($colors, dark);
     text-decoration: none;
     padding: 0.5rem;
@@ -27,8 +26,8 @@
   a:hover,
   a:active,
   a.active {
-    background: map-get($colors, primary);
-    border-color: map-get($colors, secondary);
+    // background: map-get($colors, primary);
+    border-bottom-color: map-get($colors, secondary);
     color: map-get($colors, secondary);
   }
 
