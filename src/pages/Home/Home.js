@@ -6,8 +6,7 @@ const PARAGRAPHS = [
   {
     id: 1,
     value: `
-      I'm a full-stack web app developer who's passionate about the MERN stack.
-      This involves MongoDB, Express.js, React, and Node.js.
+      Hello! I'm a full-stack web app developer that's passionate about the MERN stack.
     `
   },
   {
@@ -46,7 +45,7 @@ const PARAGRAPHS = [
       I have a life outside of coding as well. Some of the things
       I spend time on include mountain biking, bowling, video games, RC cars, and PCs.
     `
-  },
+  }
 ];
 
 
@@ -58,13 +57,15 @@ const Home = () => (
     <div className="Home">
       <h1>Erik J Brown Tech LLC</h1>
 
-      {PARAGRAPHS.map(p => <p key={p.id}>{p.value}</p>)}
+      <div className="Home__Content">
+        {PARAGRAPHS.map(p => <p key={p.id}>{p.value}</p>)}
 
-      <p>
-        If you're interested in contacting me about freelance opportunities or wish to network,
-        you can find me on LinkedIn, Upwork, GitHub, or email me
-        at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>
-      </p>
+        <p>
+          If you're interested in contacting me about freelance opportunities or wish to network,
+          you can find me on LinkedIn, Upwork, GitHub, or email me
+          at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>
+        </p>
+      </div>
     </div>
   </>
 );

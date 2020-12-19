@@ -3,8 +3,6 @@
 
 .Home {
   @extend .page_layout;
-  background: linear-gradient(to bottom, map-get($colors, secondary), map-get($colors, light) 01%);
-  width: 100%;
 
   h1 {
     width: fit-content;
@@ -18,43 +16,49 @@
     }
   }
 
-  p {
-    width: 100%;
-    margin: 0;
-    padding: 1rem;
-    text-align: left;
-    font-size: 1.2rem;
+  .Home__Content {
+    @extend .Home;
+    max-width: 60rem;
 
-    @include media-min-width(40rem) {
-      padding-left: 5rem;
-      text-align: right;
-    }
-
-    @include media-min-width(60rem) {
-      width: 60rem;
-      border-radius: 8px;
-    }
-
-    &:nth-of-type(odd) {
-      background: #f1d7cb;
-      text-align: left;
-
-      @include media-min-width(40rem) {
-        padding-left: 2rem;
-        padding-right: 5rem;
-      }
-
-      @include media-min-width(60rem) {
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-    }
-
-    &:last-of-type {
+    p {
+      width: 100%;
+      margin: 1rem 0 0 0;
       padding: 2rem;
-      background: none;
-      box-shadow: none;
-      text-align: center;
-      font-size: 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+
+      @include media-min-width(42rem) {
+        align-self: flex-end;
+        width: 40rem;
+        text-align: right;
+        border-radius: 8px;
+      }
+
+      &:nth-of-type(odd) {
+        background: map-get($colors, secondary-light);
+        color: map-get($colors, dark);
+        text-align: left;
+
+        @include media-min-width(42rem) {
+          align-self: flex-start;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      &:first-of-type {
+        align-self: center;
+        margin: 0;
+        background: map-get($colors, dark);
+        color: map-get($colors, primary);
+        text-align: left;
+      }
+
+      &:last-of-type {
+        align-self: center;
+        background: map-get($colors, primary-light);
+        box-shadow: none;
+        font-size: 1rem;
+      }
     }
   }
 }
