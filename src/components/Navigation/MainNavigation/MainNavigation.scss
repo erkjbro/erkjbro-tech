@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-around;
 
-  @include media-min-width(40rem) {
+  @include media-min-width(42rem) {
     display: none;
   }
 }
@@ -33,7 +33,7 @@
 .main-navigation__header-nav {
   display: none;
 
-  @include media-min-width(40rem) {
+  @include media-min-width(42rem) {
     display: block;
   }
 }

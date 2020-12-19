@@ -14,7 +14,7 @@
   padding: 0 1rem;
   z-index: 5;
 
-  @include media-min-width(40rem) {
+  @include media-min-width(42rem) {
     justify-content: space-between;
   }
 }
