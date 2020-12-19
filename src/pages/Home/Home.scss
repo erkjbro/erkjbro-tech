@@ -27,6 +27,7 @@
 
     @include media-min-width(40rem) {
       padding-left: 5rem;
+      text-align: right;
     }
 
     @include media-min-width(60rem) {
