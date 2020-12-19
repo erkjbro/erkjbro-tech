@@ -9,7 +9,7 @@ const Bio = () => {
       <p>
         React got me interested in web development. I couldn't find interesting local jobs and I
         needed experience, so I started learning on my own and working as a freelancer. Now I'm a
-        MERN stack web developer and still trying to both learn and work at the same time.
+        MERN stack web developer and continuing to learn while doing jobs.
       </p>
 
       <h1>Long Bio</h1>
