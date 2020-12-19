@@ -17,7 +17,8 @@
   }
 
   a {
-    border: 1px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-radius: 8px;
     color: map-get($colors, dark);
     text-decoration: none;
     padding: 0.5rem;
@@ -27,8 +28,8 @@
   a:active,
   a.active {
     background: map-get($colors, primary);
-    border-color: map-get($colors, dark);
-    color: map-get($colors, dark);
+    border-color: map-get($colors, secondary);
+    color: map-get($colors, secondary);
   }
 
   @include media-min-width(40rem) {
