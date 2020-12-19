@@ -3,6 +3,7 @@
 
 .Home {
   @extend .page_layout;
+  background: linear-gradient(to bottom, map-get($colors, secondary), map-get($colors, light) 02%);
   width: 100%;
 
   h1 {
@@ -28,18 +29,29 @@
       padding-left: 5rem;
     }
 
+    @include media-min-width(60rem) {
+      width: 60rem;
+      border-radius: 8px;
+    }
+
     &:nth-of-type(odd) {
-      background: map-get($colors, primary-light);
+      background: #f1d7cb;
       text-align: left;
 
       @include media-min-width(40rem) {
         padding-left: 2rem;
         padding-right: 5rem;
       }
+
+      @include media-min-width(60rem) {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
     }
 
     &:last-of-type {
       padding: 2rem;
+      background: none;
+      box-shadow: none;
       text-align: center;
       font-size: 1rem;
     }
