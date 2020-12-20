@@ -6,7 +6,7 @@ const PARAGRAPHS = [
   {
     id: 1,
     value: `
-      Hey there! My name is Erik and I am a full-stack web developer that is passionate about the MERN stack.
+      Hey there! My name is Erik. I am a full-stack web developer that is passionate about the MERN stack.
     `
   },
   {

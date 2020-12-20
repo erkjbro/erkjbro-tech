@@ -49,12 +49,6 @@
         }
       }
 
-      &:nth-of-type(even) {
-        @include media-min-width(42rem) {
-          border-right-color: map-get($colors, light);
-        }
-      }
-
       &:first-of-type {
         align-self: center;
         margin: 0;
