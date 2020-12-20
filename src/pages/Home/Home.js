@@ -60,7 +60,7 @@ const Home = () => (
         {PARAGRAPHS.map(p => <p key={p.id}>{p.value}</p>)}
 
         <p>
-          If you're interested in contacting me about freelance opportunities or wish to network, you can find me
+          If you'd like to contact me about work or wish to network, you can find me
           on <a href="https://https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
           , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
           , <a href="https://github.com/erkjbro">GitHub</a>
