@@ -65,15 +65,15 @@
       }
 
       &:last-of-type {
-        margin-bottom: 2rem;
         align-self: center;
         background: map-get($colors, primary);
         color: map-get($colors, light);
         border-color: transparent;
-        box-shadow: 0 2px 6px map-get($colors, shadow);
         font-size: 1rem;
 
         @include media-min-width(42rem) {
+          margin-bottom: 2rem;
+          box-shadow: 0 2px 6px map-get($colors, shadow);
           border-right-color: transparent;
         }
 
