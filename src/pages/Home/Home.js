@@ -65,6 +65,7 @@ const Home = () => (
           , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
           , <a href="https://github.com/erkjbro">GitHub</a>
           , or email me at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>
+          .
         </p>
       </div>
     </div>

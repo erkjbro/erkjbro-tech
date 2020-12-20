@@ -26,7 +26,7 @@
 
     p {
       width: 100%;
-      margin: 1rem 0 0 0;
+      margin: 0;
       padding: 2rem;
       text-align: left;
       font-size: 1.2rem;
@@ -34,9 +34,11 @@
       @include media-min-width(42rem) {
         align-self: flex-end;
         width: 40rem;
+        margin: 1rem 0;
         text-align: right;
         background-clip: padding-box;
         border: 4px solid transparent;
+        box-shadow: 0 2px 6px map-get($colors, shadow);
       }
 
       &:nth-of-type(odd) {
@@ -49,6 +51,10 @@
         }
       }
 
+      &:nth-of-type(even) {
+        box-shadow: none;
+      }
+
       &:first-of-type {
         align-self: center;
         margin: 0;
@@ -59,13 +65,26 @@
       }
 
       &:last-of-type {
+        margin-bottom: 2rem;
         align-self: center;
-        background: map-get($colors, primary-light);
+        background: map-get($colors, primary);
+        color: map-get($colors, light);
         border-color: transparent;
+        box-shadow: 0 2px 6px map-get($colors, shadow);
         font-size: 1rem;
 
         @include media-min-width(42rem) {
           border-right-color: transparent;
+        }
+
+        a {
+          text-decoration: none;
+          color: map-get($colors, tertiary);
+
+          &:hover {
+            color: map-get($colors, dark);
+            text-decoration: underline;
+          }
         }
       }
     }
