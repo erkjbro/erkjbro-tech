@@ -66,6 +66,7 @@
 
       &:last-of-type {
         align-self: center;
+        text-align: left;
         background: map-get($colors, primary);
         color: map-get($colors, light);
         border-color: transparent;
@@ -87,6 +88,14 @@
           }
         }
       }
+    }
+
+    code {
+      text-align: left;
+      background: white;
+      color: black;
+      width: 100%;
+      padding: 2rem;
     }
   }
 }
