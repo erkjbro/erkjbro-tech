@@ -82,7 +82,7 @@ const Home = () => (
         <code>
           I need to make a portfolio page for projects and courses, but I'll share a couple
           course projects for reference. These links might break because I am migrating to
-          AWS soon.
+          AWS.
 
           <ul>
             <li>
@@ -96,6 +96,10 @@ const Home = () => (
             <li>
               <a href="https://burger.erkjbro.io">Burger Builder</a>
               - Academind course: React - The Complete Guide
+            </li>
+            <li>
+              <a href="https://superm.erkjbro.com">SuperM</a>
+              - Learn React - Guide by Jad Joubran
             </li>
           </ul>
         </code>
