@@ -46,7 +46,7 @@ The project is following a **Feature Branch Workflow** pattern since it's a simp
 # DevOps Info
 > Development, Staging, and Production Info?
 
-The app is deployed using **Firebase Hosting**.
+The app is deployed using **AWS Amplify**.
 
 # Collaborators
 > Include: Person / Role / Contact Info / Timezone
