@@ -71,7 +71,7 @@ const Home = () => (
 
         <p>
           To contact me regarding job opportunities or for networking, you can find me
-          on <a href="https://https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
+          on <a href="https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
           , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
           , <a href="https://github.com/erkjbro">GitHub</a>
           , <a href="https://twitter.com/erkjbro">Twitter</a>
