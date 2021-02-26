@@ -86,11 +86,11 @@ const Home = () => (
 
           <ul>
             <li>
-              <a href="https://places.erkjbro.io">MERN Places</a>
+              <a href="https://mern-places.erkjbro.com">MERN Places</a>
               - Academind course: The MERN Fullstack Guide
             </li>
             <li>
-              <a href="https://css.erkjbro.app">CSS Course Project</a>
+              <a href="https://uhost.erkjbro.com">uHost</a>
               - Academind course: CSS - The Complete Guide
             </li>
             <li>
