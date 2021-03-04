@@ -20,32 +20,24 @@ const PARAGRAPHS = [
   {
     id: 2,
     value: `
-      Lately I have been using Digital Ocean to host my VMs, Google Firebase
-      for web client hosting, MongoDB Atlas for a cloud DBaaS, GitHub for a code repo, and then just Namecheap
-      for domains. The VMs simply use Nginx and PM2 for running Node apps.
-    `
-  },
-  {
-    id: 3,
-    value: `
-      However, I'm in the process of studying content relating to the AWS Certified Developer Associate Exam
-      and becoming more familiar with their ecosystem. Also trying out Amplify for a Firebase substitute. Additionally
-      I'm working with Redis a bit, spending time on headless browser testing, learning to utilize S3 for assets in a
-      scalable way, and reviewing other "advanced" nodejs concepts.
+      My work is done on <b>AWS</b>. Currently I am using AWS Amplify to manage my frontend environments. I'm
+      also testing Elastic Beanstalk as a solution for apps with servers. Have yet to decided if I like using
+      CodeStar or if I'd prefer to use the <b>eb cli</b> along with CodePipeline for automated deployments.
+      I am looking at SAM and ways to deploy containers for lambdas.
     `
   },
   {
     id: 4,
     value: `
-      My primary tools are Visual Studio Code, MongoDB Compass, Postman, and Docker Desktop.
+      My primary tools are <b>Visual Studio Code</b>, MongoDB Compass, Postman, and Docker Desktop.
       I like to use WSL2 w/ Ubuntu on Windows Terminal for my shell.
     `
   },
   {
     id: 5,
     value: `
-      Some other apps I utilize include Jira with kanban boards, Confluence for project documentation,
-      and Lucidchart for flowcharts. I haven't settled on a time tracking app yet.
+      Other apps I utilize include Jira with kanban boards, Confluence for project documentation,
+      Lucidchart for flowcharts, and Everhour for time tracking and budgeting.
     `
   },
   {
@@ -53,6 +45,17 @@ const PARAGRAPHS = [
     value: `
       I have a life outside of coding as well. Some of the things I enjoy include mountain biking,
       video games, a little exercise, and custom PCs.
+    `
+  },
+  {
+    id: 7,
+    value: `
+      To contact me regarding job opportunities or for networking, you can find me
+      on <a href="https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
+      , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
+      , <a href="https://github.com/erkjbro">GitHub</a>
+      , <a href="https://twitter.com/erkjbro">Twitter</a>
+      , or email me at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>.
     `
   }
 ];
@@ -67,17 +70,7 @@ const Home = () => (
       <h1>Erik J Brown Tech LLC</h1>
 
       <div className="Home__Content">
-        {PARAGRAPHS.map(p => <p key={p.id}>{p.value}</p>)}
-
-        <p>
-          To contact me regarding job opportunities or for networking, you can find me
-          on <a href="https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
-          , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
-          , <a href="https://github.com/erkjbro">GitHub</a>
-          , <a href="https://twitter.com/erkjbro">Twitter</a>
-          , or email me at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>
-          .
-        </p>
+        {PARAGRAPHS.map(p => <p key={p.id} dangerouslySetInnerHTML={{ __html: p.value }} />)}
 
         <code>
           I need to make a portfolio page for projects and courses, but I'll share a couple
