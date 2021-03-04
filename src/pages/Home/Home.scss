@@ -9,7 +9,7 @@
     padding: 0.2rem;
     margin-bottom: 2rem;
     border: 4px solid transparent;
-    border-bottom-color: map-get($colors, secondary);
+    border-bottom-color: map-get($colors, primary);
 
     @include media-min-width(40rem) {
       padding: 0.4rem 4rem;
@@ -42,8 +42,7 @@
       }
 
       &:nth-of-type(odd) {
-        background: map-get($colors, secondary-light);
-        color: map-get($colors, dark);
+        background: map-get($colors, tertiary);
         text-align: left;
 
         @include media-min-width(42rem) {
@@ -52,12 +51,13 @@
       }
 
       &:nth-of-type(even) {
+        background: map-get($colors, primary);
         box-shadow: none;
       }
 
       &:first-of-type {
         align-self: center;
-        margin: 0;
+        margin-top: 0;
         background: map-get($colors, dark);
         color: map-get($colors, primary);
         border-color: transparent;
@@ -67,8 +67,8 @@
       &:last-of-type {
         align-self: center;
         text-align: left;
-        background: map-get($colors, primary);
-        color: map-get($colors, light);
+        background: map-get($colors, dark);
+        color: map-get($colors, primary);
         border-color: transparent;
         font-size: 1rem;
 
@@ -80,11 +80,11 @@
 
         a {
           text-decoration: none;
-          color: map-get($colors, tertiary);
+          color: map-get($colors, secondary);
 
           &:hover {
-            color: map-get($colors, dark);
-            text-decoration: underline;
+            color: map-get($colors, light);
+            text-decoration: wavy underline;
           }
         }
       }
