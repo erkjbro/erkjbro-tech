@@ -42,7 +42,8 @@
       }
 
       &:nth-of-type(odd) {
-        background: map-get($colors, tertiary);
+        background: map-get($colors, primary);
+        color: map-get($colors, dark);
         text-align: left;
 
         @include media-min-width(42rem) {
@@ -51,17 +52,18 @@
       }
 
       &:nth-of-type(even) {
-        background: map-get($colors, primary);
+        background: map-get($colors, tertiary);
         box-shadow: none;
       }
 
       &:first-of-type {
         align-self: center;
         margin-top: 0;
-        background: map-get($colors, dark);
-        color: map-get($colors, primary);
+        background: map-get($colors, light);
+        color: map-get($colors, tertiary);
         border-color: transparent;
         text-align: left;
+        font-size: 1.5rem;
       }
 
       &:last-of-type {

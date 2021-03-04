@@ -6,38 +6,42 @@ const PARAGRAPHS = [
   {
     id: 0,
     value: `
-      Hey there! My name is Erik. I am a full-stack web developer that is passionate about the MERN stack.
+      Hey there! My name is <strong>Erik</strong>. I am a full-stack software developer that
+      is focused on the <em>MERN</em> stack.
     `
   },
   {
     id: 1,
     value: `
-      What do I mean by the "MERN" stack? I mean React.js for building web clients, Node.js and Express.js for
-      servers or backend APIs, and MongoDB with the Mongoose ODM for a database. For a better breakdown of tech
-      details, please visit the tech page.
+      What do I mean by <strong>MERN</strong> stack? I mean <em>React</em> for building web clients,
+      <em>Node.js</em> with <em>Express.js</em> for servers &amp; backend APIs,
+      and <em>MongoDB</em> with <i>Mongoose</i> for databases.
     `
   },
   {
     id: 2,
     value: `
-      My work is done on <b>AWS</b>. Currently I am using AWS Amplify to manage my frontend environments. I'm
-      also testing Elastic Beanstalk as a solution for apps with servers. Have yet to decided if I like using
-      CodeStar or if I'd prefer to use the <b>eb cli</b> along with CodePipeline for automated deployments.
-      I am looking at SAM and ways to deploy containers for lambdas.
+      My work is focused on leveraging <strong>AWS</strong> services. I use <em>AWS Amplify</em>
+      to manage my frontend environments. I'm also testing <em>Elastic Beanstalk</em> as a
+      solution for apps with servers. So far I have yet to decided if I prefer using
+      <em>CodeStar</em> or the <em>eb cli</em> along with <em>CodePipeline</em> for
+      automated deployments.
     `
   },
   {
     id: 4,
     value: `
-      My primary tools are <b>Visual Studio Code</b>, MongoDB Compass, Postman, and Docker Desktop.
-      I like to use WSL2 w/ Ubuntu on Windows Terminal for my shell.
+      My primary <strong>tools</strong> are <em>Visual Studio Code</em>, <em>MongoDB Compass</em>,
+      <em>Sqlectron</em>, <em>Postman</em>, and <em>Docker Desktop</em>. I like to use WSL2 with
+      Ubuntu on Windows Terminal for my shell.
     `
   },
   {
     id: 5,
     value: `
-      Other apps I utilize include Jira with kanban boards, Confluence for project documentation,
-      Lucidchart for flowcharts, and Everhour for time tracking and budgeting.
+      Additional <strong>software</strong> used in my process includes <em>Jira</em> with kanban boards,
+      <em>Confluence</em> for project documentation, <em>Lucidchart</em> for flowcharts, and
+      <em>Everhour</em> for tracking both time and budget.
     `
   },
   {
@@ -60,6 +64,32 @@ const PARAGRAPHS = [
   }
 ];
 
+const TempFooter = () => (
+  <code>
+    I still need to make a portfolio page for projects and courses, but here
+    are a few for reference. These links might break because I am migrating to AWS.
+
+    <ul>
+      <li>
+        <a href="https://mern-places.erkjbro.com">MERN Places</a>
+              - Academind course: The MERN Fullstack Guide
+      </li>
+      <li>
+        <a href="https://uhost.erkjbro.com">uHost</a>
+              - Academind course: CSS - The Complete Guide
+      </li>
+      <li>
+        <a href="https://burger.erkjbro.io">Burger Builder</a>
+              - Academind course: React - The Complete Guide
+      </li>
+      <li>
+        <a href="https://superm.erkjbro.com">SuperM</a>
+              - Learn React - Guide by Jad Joubran
+      </li>
+    </ul>
+  </code>
+)
+
 
 const Home = () => (
   <>
@@ -68,34 +98,9 @@ const Home = () => (
     </div>
     <div className="Home">
       <h1>Erik J Brown Tech LLC</h1>
-
       <div className="Home__Content">
         {PARAGRAPHS.map(p => <p key={p.id} dangerouslySetInnerHTML={{ __html: p.value }} />)}
-
-        <code>
-          I need to make a portfolio page for projects and courses, but I'll share a couple
-          course projects for reference. These links might break because I am migrating to
-          AWS.
-
-          <ul>
-            <li>
-              <a href="https://mern-places.erkjbro.com">MERN Places</a>
-              - Academind course: The MERN Fullstack Guide
-            </li>
-            <li>
-              <a href="https://uhost.erkjbro.com">uHost</a>
-              - Academind course: CSS - The Complete Guide
-            </li>
-            <li>
-              <a href="https://burger.erkjbro.io">Burger Builder</a>
-              - Academind course: React - The Complete Guide
-            </li>
-            <li>
-              <a href="https://superm.erkjbro.com">SuperM</a>
-              - Learn React - Guide by Jad Joubran
-            </li>
-          </ul>
-        </code>
+        <TempFooter />
       </div>
     </div>
   </>
