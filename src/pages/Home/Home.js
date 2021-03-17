@@ -86,6 +86,11 @@ const TempFooter = () => (
         <a href="https://superm.erkjbro.com">SuperM</a>
               - Learn React - Guide by Jad Joubran
       </li>
+      <br />
+      <li>
+        <a href="https://github.com/erkjbro/verbose-octo-blog">VOB</a>
+              - An open-source blogging app that I'm developing.
+      </li>
     </ul>
   </code>
 )
