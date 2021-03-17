@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
-import SiteAlert from './components/UIElements/SiteAlert/SiteAlert';
+// import SiteAlert from './components/UIElements/SiteAlert/SiteAlert';
 import Home from './pages/Home/Home';
 import Bio from './pages/Bio/Bio';
 import Tech from './pages/Tech/Tech';
@@ -14,6 +14,7 @@ import './App.scss';
 
 const App = () => {
   let routes;
+  // let alertMessage;
 
   routes = (
     <Switch>
@@ -36,15 +37,9 @@ const App = () => {
       <main>
         {routes}
       </main>
-      <SiteAlert>
-        This website is currently under development.
-        Visit <a
-          href="https://erkjbro.github.io/"
-          style={{ color: 'white' }}
-        >
-          erkjbro.github.io
-        </a> for my old portfolio site.
-      </SiteAlert>
+      {/* <SiteAlert>
+        {alertMessage}
+      </SiteAlert> */}
     </Router>
   );
 };
