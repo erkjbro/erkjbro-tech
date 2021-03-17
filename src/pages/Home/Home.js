@@ -61,10 +61,10 @@ const PARAGRAPHS = [
     id: 7,
     value: `
       To contact me regarding job opportunities or for networking, you can find me
-      on <a href="https://www.linkedin.com/in/erkjbro/">LinkedIn</a>
-      , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea">Upwork</a>
-      , <a href="https://github.com/erkjbro">GitHub</a>
-      , <a href="https://twitter.com/erkjbro">Twitter</a>
+      on <a href="https://www.linkedin.com/in/erkjbro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea" target="_blank" rel="noopener noreferrer">Upwork</a>
+      , <a href="https://github.com/erkjbro" target="_blank" rel="noopener noreferrer">GitHub</a>
+      , <a href="https://twitter.com/erkjbro" target="_blank" rel="noopener noreferrer">Twitter</a>
       , or email me at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>.
     `
   }
@@ -77,25 +77,55 @@ const TempFooter = () => (
 
     <ul>
       <li>
-        <a href="https://mern-places.erkjbro.com">MERN Places</a>
-              - Academind course: The MERN Fullstack Guide
+        <a
+          href="https://mern-places.erkjbro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MERN Places
+        </a>
+        &nbsp;- Academind course: The MERN Fullstack Guide
       </li>
       <li>
-        <a href="https://uhost.erkjbro.com">uHost</a>
-              - Academind course: CSS - The Complete Guide
+        <a
+          href="https://uhost.erkjbro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          uHost
+        </a>
+        &nbsp;- Academind course: CSS - The Complete Guide
       </li>
       <li>
-        <a href="https://burger.erkjbro.io">Burger Builder</a>
-              - Academind course: React - The Complete Guide
+        <a
+          href="https://burger.erkjbro.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Burger Builder
+        </a>
+        &nbsp;- Academind course: React - The Complete Guide
       </li>
       <li>
-        <a href="https://superm.erkjbro.com">SuperM</a>
-              - Learn React - Guide by Jad Joubran
+        <a
+          href="https://superm.erkjbro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          SuperM
+        </a>
+        &nbsp;- Learn React - Guide by Jad Joubran
       </li>
       <br />
       <li>
-        <a href="https://github.com/erkjbro/verbose-octo-blog">VOB</a>
-              - An open-source blogging app that I'm developing.
+        <a
+          href="https://github.com/erkjbro/verbose-octo-blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VOB
+        </a>
+        &nbsp;- An open-source blogging app that I'm developing.
       </li>
     </ul>
   </code>
