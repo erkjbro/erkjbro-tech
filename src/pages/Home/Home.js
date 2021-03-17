@@ -22,18 +22,24 @@ const PARAGRAPHS = [
     id: 2,
     value: `
       My work is focused on leveraging <strong>AWS</strong> services. I use <em>AWS Amplify</em>
-      to manage my frontend environments. I'm also testing <em>Elastic Beanstalk</em> as a
-      solution for apps with servers. So far I have yet to decided if I prefer using
-      <em>CodeStar</em> or the <em>eb cli</em> along with <em>CodePipeline</em> for
-      automated deployments.
+      to manage my frontend environments, and I include the <em>Admin UI</em> if I'm using it to
+      build a small project. This helps me save time and reduce costs to both myself and my clients.
+    `
+  },
+  {
+    id: 3,
+    value: `
+      Lately I have been working on ways to automate deployments for backend services as well,
+      but I haven't settled on a solution. For now, I have been using the <em>eb cli</em> to
+      manage my backend deployments and environments.
     `
   },
   {
     id: 4,
     value: `
       My primary <strong>tools</strong> are <em>Visual Studio Code</em>, <em>MongoDB Compass</em>,
-      <em>Sqlectron</em>, <em>Postman</em>, and <em>Docker Desktop</em>. I like to use WSL2 with
-      Ubuntu on Windows Terminal for my shell.
+      <em>Sqlectron</em>, <em>Postman</em>, and <em>Docker Desktop</em>. I use WSL2 with
+      Ubuntu on Windows Terminal for my shell. <em>Vim</em> all the way.
     `
   },
   {
