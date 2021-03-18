@@ -98,7 +98,7 @@ const TempFooter = () => (
       </li>
       <li>
         <a
-          href="https://burger.erkjbro.io"
+          href="https://burger.erkjbro.app"
           target="_blank"
           rel="noopener noreferrer"
         >
