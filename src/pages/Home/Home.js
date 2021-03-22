@@ -62,7 +62,7 @@ const PARAGRAPHS = [
     value: `
       To contact me regarding job opportunities or for networking, you can find me
       on <a href="https://www.linkedin.com/in/erkjbro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      , <a href="https://www.upwork.com/freelancers/~01820d75b9551f9eea" target="_blank" rel="noopener noreferrer">Upwork</a>
+      , <a href="https://www.upwork.com/fl/erkjbro" target="_blank" rel="noopener noreferrer">Upwork</a>
       , <a href="https://github.com/erkjbro" target="_blank" rel="noopener noreferrer">GitHub</a>
       , <a href="https://twitter.com/erkjbro" target="_blank" rel="noopener noreferrer">Twitter</a>
       , or email me at <a href="mailto:erkjbro@erikjbrown.tech">erkjbro@erikjbrown.tech</a>.
