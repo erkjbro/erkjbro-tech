@@ -26,7 +26,6 @@
   a:hover,
   a:active,
   a.active {
-    // background: map-get($colors, primary);
     border-bottom-color: map-get($colors, secondary);
     color: map-get($colors, secondary);
   }

@@ -52,14 +52,14 @@
       }
 
       &:nth-of-type(even) {
-        background: map-get($colors, tertiary);
+        background: map-get($colors, secondary);
       }
 
       &:first-of-type {
         align-self: center;
         margin-top: 0;
         background: map-get($colors, light);
-        color: map-get($colors, tertiary);
+        color: map-get($colors, secondary);
         border-color: transparent;
         text-align: left;
         font-size: 1.5rem;
@@ -81,7 +81,7 @@
 
         a {
           text-decoration: none;
-          color: map-get($colors, secondary);
+          color: map-get($colors, tertiary);
 
           &:hover {
             color: map-get($colors, light);
