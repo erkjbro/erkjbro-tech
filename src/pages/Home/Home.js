@@ -6,59 +6,75 @@ const PARAGRAPHS = [
   {
     id: 0,
     value: `
-      Hey there! My name is <strong>Erik</strong>. I am a full-stack software developer that
-      is focused on the <em>MERN</em> stack.
+      Greetings! My name is <strong>Erik</strong>. I am a <em>Full-Stack Software Developer</em>.
+      I mainly do work around web applications and a JavaScript stack (MERN).
     `
   },
   {
     id: 1,
     value: `
-      What do I mean by <strong>MERN</strong> stack? I mean <em>React</em> for building web clients,
-      <em>Node.js</em> with <em>Express.js</em> for servers &amp; backend APIs,
-      and <em>MongoDB</em> with <i>Mongoose</i> for databases.
+      At the frontend, I mostly build web apps using React with Redux or Context,
+      and I prefer working with SCSS. Then I manage these SPAs using AWS Amplify since it's
+      both powerful and straightforward to utilize. It also enables me to quickly build a backend
+      for prototypes and small projects through the Admin UI.
     `
   },
   {
     id: 2,
     value: `
-      My work is focused on leveraging <strong>AWS</strong> services. I use <em>AWS Amplify</em>
-      to manage my frontend environments, and I include the <em>Admin UI</em> if I'm using it to
-      build a small project. This helps me save time and reduce costs to both myself and my clients.
+      On the backend, I lean towards NodeJS/Express and MongoDB, typically as a REST API with
+      an MVC architecture. These environments then get managed using AWS Elastic Beanstalk,
+      the EB CLI, and MongoDB Atlas for the DBaaS.
     `
   },
   {
     id: 3,
     value: `
-      Lately I have been working on ways to automate deployments for backend services as well,
-      but I haven't settled on a solution. For now, I have been using the <em>eb cli</em> to
-      manage my backend deployments and environments.
+      I began working with TypeScript in April of 2021 as well, and now I'm making use of it for
+      full-stack development. If interested, you can view an example of my workflow on GitHub. I
+      had a take-home project to build an admin panel in one week, and so I created the EDU
+      Platform app and deployed it in the same manner as described above.
     `
   },
   {
-    id: 4,
+    id: 44,
     value: `
-      My primary <strong>tools</strong> are <em>Visual Studio Code</em>, <em>MongoDB Compass</em>,
-      <em>Sqlectron</em>, <em>Postman</em>, and <em>Docker Desktop</em>. I use WSL2 with
-      Ubuntu on Windows Terminal for my shell. <em>Vim</em> all the way.
+      Some of this could, should, and will evolve with time. I'm researching microservice architecture
+      using this same tech and reviewing AWS SAM as a lower-cost and cleaner solution for backend
+      development and deployment.
     `
   },
   {
-    id: 5,
+    id: 55,
     value: `
-      Additional <strong>software</strong> used in my process includes <em>Jira</em> with kanban boards,
-      <em>Confluence</em> for project documentation, <em>Lucidchart</em> for flowcharts, and
-      <em>Everhour</em> for tracking both time and budget.
+      I also find it crucial to align expectations by creating project documentation and tracking tasks
+      with a Kanban board. With Confluence, I use a template to put together some product requirements,
+      which serve as a source of truth for a project.
     `
   },
   {
     id: 6,
+    value: `
+      My primary tools are Visual Studio Code, MongoDB Compass, Sqlectron, Postman, and Docker Desktop.
+      I use WSL2 with Ubuntu on Windows Terminal for my shell.
+    `
+  },
+  {
+    id: 7,
+    value: `
+      Additional software used in my process includes Jira with kanban boards, Confluence for project
+      documentation, Lucidchart for flowcharts, and Everhour for tracking both time and budget.
+    `
+  },
+  {
+    id: 8,
     value: `
       I have a life outside of coding as well. Some of the things I enjoy include mountain biking,
       video games, a little exercise, and custom PCs.
     `
   },
   {
-    id: 7,
+    id: 9,
     value: `
       To contact me regarding job opportunities or for networking, you can find me
       on <a href="https://www.linkedin.com/in/erkjbro/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -126,6 +142,16 @@ const TempFooter = () => (
           VOB
         </a>
         &nbsp;- An open-source blogging app that I'm developing.
+      </li>
+      <li>
+        <a
+          href="https://github.com/erkjbro/edu-platform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          EDU Platform
+        </a>
+        &nbsp;- A take-home project. MERN &amp; TypeScript.
       </li>
     </ul>
   </code>
