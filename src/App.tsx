@@ -9,8 +9,7 @@ const App = () => {
   return (
     <Div
       sx={{
-        margin: '20px',
-        padding: '20px',
+        minHeight: '100vh',
         border: '2px solid orange',
         textAlign: 'center',
       }}
