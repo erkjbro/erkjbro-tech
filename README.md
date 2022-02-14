@@ -1,58 +1,46 @@
-# Erik J Brown Tech Homepage
+# Getting Started with Create React App
 
-A portfolio website to describe projects, courses, methods, and more.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Get started
- - Clone the project.
- - `yarn install`: Install all dependencies
- - `yarn start`: Start the project for development
+## Available Scripts
 
-# Project structure & architecture
-> #### Caution: This project is using `yarn` instead of npm.
+In the project directory, you can run:
 
- **Dependencies:**
+### `yarn start`
 
-  - [x] react
-  - [x] react-dom
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-  **Dev Dependencies:**
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-  > If applicable
+### `yarn test`
 
- **Project Structure:**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-This project was bootstrapped using `create-react-app`.
+### `yarn build`
 
-# Development Workflow
-> Feature Branch Workflow, Git Workflow, or another Workflow Strategy? `master`, `develop`, `feature`, `release`, `hotfix`, or `bug` Branches? Branch naming conventions? Add notes about you & your team's workflow methodology.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-> Notes on the project's convention for features, hotfixes, release, etc.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-The project is following a **Feature Branch Workflow** pattern since it's a simple demo app.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Pull Request Guidelines
-   * Fetch the latest main: `git pull origin main` or `git fetch origin main` (Don't forget to stay on `main` branch)
-   * Create a new branch: `git checkout -b new-branch`.
-   * Make your changes and commit often.
-   * Were commits pushed to `origin`? If so, you should rebase your branch. Fetch with `git fetch origin main` and run
-   `git rebase main`.
-   * Resolve conflicts on each commit. Do it with `kdiff3` or anything that suits you. Add these modification and run `git rebase --continue` until you've cleared all conflicts.
-   * Test your code.
-   * Push your code.
-      - If the branch is new, you just use `git push origin myNewBranch`.
-      - If you had to rebase, you'll need to force the push with `git push origin myNewBranch -f`.
-   * Create the PR and point to the `main` Branch.
+### `yarn eject`
 
-# DevOps Info
-> Development, Staging, and Production Info?
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-The app is deployed using **AWS Amplify**.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# Collaborators
-> Include: Person / Role / Contact Info / Timezone
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Business/Technical
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-  | Name | Role | Contact | Timezone |
-  | --- | --- | --- | --- |
-  | Erik Brown | Web Developer | erkjbro@gmail.com | USA (GMT-5) |
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
