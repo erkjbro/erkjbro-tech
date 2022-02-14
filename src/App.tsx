@@ -1,22 +1,21 @@
 import { useEffect } from 'react';
 
 import { Portfolio } from './portfolio';
-import { Div } from './shared/uiKit';
+import { Div, Sitewide } from './shared/uiKit';
 
 const App = () => {
   useEffect(() => { document.title = 'Erik J Brown Tech LLC' }, []);
 
   return (
-    <Div
+    <Sitewide
       sx={{
         minHeight: '100vh',
-        border: '2px solid orange',
         textAlign: 'center',
       }}
     >
       <h1>Erik J Brown Tech LLC</h1>
       <Portfolio />
-    </Div>
+    </Sitewide>
   );
 };
 

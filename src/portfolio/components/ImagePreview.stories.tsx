@@ -1,4 +1,4 @@
-import ImagePreview from './image-preview';
+import ImagePreview from './ImagePreview';
 
 export const Default = () => (
   <ImagePreview />

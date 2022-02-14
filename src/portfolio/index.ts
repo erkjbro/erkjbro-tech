@@ -1,1 +1,1 @@
-export { default as Portfolio } from './pages/portfolio';
+export { default as Portfolio } from './pages/Portfolio';
