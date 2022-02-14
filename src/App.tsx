@@ -13,7 +13,6 @@ const App = () => {
         textAlign: 'center',
       }}
     >
-      <h1>Erik J Brown Tech LLC</h1>
       <Portfolio />
     </Sitewide>
   );
