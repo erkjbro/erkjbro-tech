@@ -24,12 +24,12 @@ const Portfolio = () => (
       }}
     >
       <p>
-        Welcome to my site! I'm in the process of rebuilding it with TypeScript, MUI, Storybook, etc.
+        Welcome to my site! I'm rebuilding it with TypeScript, MUI, Storybook, &amp; etc.
         Since you're here already, I'll provide some basic info about me.
       </p>
 
       <p>
-        I'm a software engineer! My current role involves eCommerce platforms.
+        I'm a software engineer! My current role involves e-commerce platforms. I'm known for working on UIs and ETLs.
       </p>
 
       <h3>Languages</h3>
@@ -49,10 +49,10 @@ const Portfolio = () => (
         I've built some monolithic Node.js apps as REST APIs, but lately I'm working with Python for a
         SAM-based ETL that takes care of data migration. It extracts data ids from the old platform
         and loads it into an SQS queue. From there, concurrent lambdas pick up the messages to query data
-        by these ids and ETL that data into the new system.
+        by these ids and ETL the full data into the new system.
       </p>
 
-      <h3>Contact Info</h3>
+      <h3>Where to Find Me</h3>
       <ul>
         <li><a href="mailto:erkjbro@erikjbrown.tech">E-Mail</a></li>
         <li><a href="https://www.linkedin.com/in/erkjbro/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

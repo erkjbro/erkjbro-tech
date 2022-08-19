@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, type ContainerProps, type Breakpoint } from '@mui/material';
+import { Container, type ContainerProps } from '@mui/material';
 
 import Logo from 'shared/assets/images/ejb-black-logo-v2.png';
 
@@ -10,7 +10,7 @@ const Sitewide: React.FC<ContainerProps> = ({ children, ...rest }) => (
     {...rest}
   >
     <nav style={{ backgroundColor: '#11114a', display: 'flex', justifyContent: 'center', padding: '10px 0' }}>
-      <span style={{ backgroundColor: 'whitesmoke', padding: '10px', border: '3px solid darkorange', borderRadius: '50%' }}>
+      <span style={{ backgroundColor: 'whitesmoke', padding: '10px', border: '4px solid #e8ef3d', borderRadius: '50%' }}>
         <img src={Logo} alt="logo" width="50px" />
       </span>
     </nav>
