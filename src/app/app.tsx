@@ -1,26 +1,14 @@
-import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-
-import { Portfolio } from './portfolio/portfolio';
-import { Personal } from './personal/personal';
-import { Sitenav } from '@erkjbro-tech/shared/meta';
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
+import NxWelcome from './nx-welcome';
 
-export const App: React.FC = () => {
-  useEffect(() => { document.title = 'Erik J Brown Tech LLC' }, []);
-
-  const AppRoutes = () => (
-    <Routes>
-      <Route path="/" element={<Portfolio />} />
-      <Route path="/personal" element={<Personal />} />
-    </Routes>
-  );
-
+export function App() {
   return (
-    <div className={styles['app']}>
-      <Sitenav />
-      <AppRoutes />
-    </div>
+    <>
+      <NxWelcome title="erkjbro-tech" />
+      <div />
+    </>
   );
-};
+}
+
+export default App;
