@@ -6,8 +6,8 @@ export interface PersonalProps {}
 export function Personal(props: PersonalProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to Personal!</h1>
-      <p>My name is Erik</p>
+      <h1>About me as a person!</h1>
+      <p>My name is Erik. I like video games, building PC's, Jeeps, Mountain Bikes, and more!</p>
     </div>
   );
 }
