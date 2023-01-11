@@ -9,12 +9,13 @@ export interface SitenavProps {
 export function Sitenav(props: SitenavProps) {
   return (
     <nav className={styles['container']}>
+      <div className={styles['nav-left']} />
       <NavLink to="/" className={styles['home-link']}>
         <span>
           <img src={Logo} alt="logo" width="50px" />
         </span>
       </NavLink>
-      <ul>
+      <ul className={styles['nav-right']}>
         <li>
           <NavLink to="/" className={styles['link']}>
             Home
