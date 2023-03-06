@@ -1,13 +1,17 @@
-import styles from './shared-ui.module.css';
+import styled from 'styled-components';
 
 /* eslint-disable-next-line */
 export interface SharedUiProps {}
 
+const StyledSharedUi = styled.div`
+  color: pink;
+`;
+
 export function SharedUi(props: SharedUiProps) {
   return (
-    <div className={styles['container']}>
+    <StyledSharedUi>
       <h1>Welcome to SharedUi!</h1>
-    </div>
+    </StyledSharedUi>
   );
 }
 
