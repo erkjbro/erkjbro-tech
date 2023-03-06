@@ -1,27 +1,17 @@
-import React, { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import styled from 'styled-components';
 
-import { Portfolio } from "./portfolio/portfolio";
-import { Personal } from "./personal/personal";
-import { Sitenav } from '@erkjbro-tech/shared/meta';
-import styles from "./app.module.css";
+import NxWelcome from './nx-welcome';
 
-export const App: React.FC = () => {
-  useEffect(() => {
-    document.title = "Erik J Brown Tech LLC";
-  }, []);
+const StyledApp = styled.div`
+  // Your style here
+`;
 
-  const AppRoutes = () => (
-    <Routes>
-      <Route path="/" element={<Portfolio />} />
-      <Route path="/personal" element={<Personal />} />
-    </Routes>
-  );
-
+export function App() {
   return (
-    <div className={styles['app']}>
-      <Sitenav />
-      <AppRoutes />
-    </div>
+    <StyledApp>
+      <NxWelcome title="erkjbro-tech" />
+    </StyledApp>
   );
-};
+}
+
+export default App;
