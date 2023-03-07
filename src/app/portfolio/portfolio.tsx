@@ -13,6 +13,11 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
     text: string;
   }
 
+  type Field = {
+    introduction: string;
+    title: string;
+  }
+
   // TODO: Retrieve link data from Contentful. Could also be set as footer links
   const linkData: Link[] = [
     { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
@@ -27,19 +32,19 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
     accessToken: import.meta.env.VITE_CONTENT_API_KEY
   });
 
-  const [content, setContent] = useState<string>("");
+  const [content, setContent] = useState<Field>({ introduction: "", title: "" });
 
   useEffect(() => {
-    const fetchContent = async () => {
+    (async () => {
       const response = await client.getEntries({
-        content_type: "homepage"
+        content_type: "homepage",
+        order: "sys.createdAt"
       });
-      if (response.items.length > 0) {
-        const { introduction } = response.items[0].fields as { introduction: string, title: string };
-        setContent(introduction);
+      if (response.items.length) {
+        const fields = response.items[0].fields as Field;
+        setContent(fields);
       }
-    };
-    fetchContent();
+    })();
   }, [client]);
 
   return (
@@ -48,8 +53,11 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
         <h1>Erik J Brown Tech LLC</h1>
       </div>
       <Main>
-        {content && (<div>
-          {content.split('---').map((p, i) => <p key={i}>{p.trim()}</p>)}
+        {content.introduction && (<div>
+          {content.introduction
+            .split("---")
+            .map((p, i) => <p key={i}>{p.trim()}</p>)
+          }
         </div>)}
         <Hr />
         <StyledList>
