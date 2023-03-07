@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { createClient } from "contentful";
+import ReactMarkdown from 'react-markdown';
 
 import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio-styled";
 
@@ -53,12 +54,11 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
         <h1>Erik J Brown Tech LLC</h1>
       </div>
       <Main>
-        {content.introduction && (<div>
-          {content.introduction
-            .split("---")
-            .map((p, i) => <p key={i}>{p.trim()}</p>)
-          }
-        </div>)}
+        {content.introduction && (
+          <ReactMarkdown>
+            {content.introduction}
+          </ReactMarkdown>
+        )}
         <Hr />
         <StyledList>
           {linkData.map(({ href, text }, i) => (
