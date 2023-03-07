@@ -37,6 +37,21 @@
         }
       }
     },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "erkjbro-tech:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "erkjbro-tech:build:development"
+        },
+        "production": {
+          "buildTarget": "erkjbro-tech:build:production"
+        }
+      }
+    },
     "test": {
       "executor": "@nrwl/vite:test",
       "outputs": ["coverage/erkjbro-tech"],

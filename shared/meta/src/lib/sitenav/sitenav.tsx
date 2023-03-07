@@ -1,34 +1,33 @@
-import { NavLink } from 'react-router-dom';
-import styles from './sitenav.module.css';
-import Logo from './assets/ejb-black-logo-v2.png'
+import { FC } from 'react';
 
-/* eslint-disable-next-line */
+import Logo from './assets/ejb-black-logo-v2.png';
+import { HomeLink, NavLeft, NavRight, StyledLink, StyledSitenav } from './sitenav-styled';
+
+/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
 export interface SitenavProps {
 }
 
-export function Sitenav(props: SitenavProps) {
+export const Sitenav: FC<SitenavProps> = (props) => {
   return (
-    <nav className={styles['container']}>
-      <div className={styles['nav-left']} />
-      <NavLink to="/" className={styles['home-link']}>
+    <StyledSitenav>
+      <NavLeft />
+      <HomeLink to="/">
         <span>
           <img src={Logo} alt="logo" width="50px" />
         </span>
-      </NavLink>
-      <ul className={styles['nav-right']}>
+      </HomeLink>
+      <NavRight>
         <li>
-          <NavLink to="/" className={styles['link']}>
+          <StyledLink to="/">
             Home
-          </NavLink>
+          </StyledLink>
         </li>
         <li>
-          <NavLink to="/personal" className={styles['link']}>
+          <StyledLink to="/personal">
             About Me
-          </NavLink>
+          </StyledLink>
         </li>
-      </ul>
-    </nav>
+      </NavRight>
+    </StyledSitenav>
   );
-}
-
-export default Sitenav;
+};
