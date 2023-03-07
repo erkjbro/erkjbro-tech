@@ -1,4 +1,7 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
+import { createClient } from "contentful";
+import ReactMarkdown from 'react-markdown';
+
 import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio-styled";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
@@ -6,8 +9,18 @@ export interface PortfolioProps {
 }
 
 export const Portfolio: FC<PortfolioProps> = (props) => {
-  // TODO: Retrieve link data from Contentful.
-  const linkData = [
+  type Link = {
+    href: string;
+    text: string;
+  }
+
+  type Field = {
+    introduction: string;
+    title: string;
+  }
+
+  // TODO: Retrieve link data from Contentful. Could also be set as footer links
+  const linkData: Link[] = [
     { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
     { href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
     { href: "https://github.com/erkjbro", text: "GitHub" },
@@ -15,17 +28,41 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
     { href: "https://www.upwork.com/fl/erkjbro", text: "Upwork" }
   ];
 
+  const client = createClient({
+    space: import.meta.env.VITE_CONTENT_SPACE_ID,
+    accessToken: import.meta.env.VITE_CONTENT_API_KEY
+  });
+
+  const [content, setContent] = useState<Field>({ introduction: "", title: "" });
+
+  useEffect(() => {
+    (async () => {
+      const response = await client.getEntries({
+        content_type: "homepage",
+        order: "sys.createdAt"
+      });
+      if (response.items.length) {
+        const fields = response.items[0].fields as Field;
+        setContent(fields);
+      }
+    })();
+  }, [client]);
+
   return (
     <PortfolioContainer>
       <div>
         <h1>Erik J Brown Tech LLC</h1>
       </div>
       <Main>
-        <code>Working on an update to pull homepage data from Contentful...</code>
+        {content.introduction && (
+          <ReactMarkdown>
+            {content.introduction}
+          </ReactMarkdown>
+        )}
         <Hr />
         <StyledList>
-          {linkData.map((link, i) => (
-            <HtmlLink href={link.href} key={i}>{link.text}</HtmlLink>
+          {linkData.map(({ href, text }, i) => (
+            <HtmlLink href={href} key={i}>{text}</HtmlLink>
           ))}
         </StyledList>
       </Main>
