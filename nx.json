@@ -6,7 +6,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YTc5MGRkZDEtMTA0Yi00Y2RhLWE3OTMtYmVhOTQ3ODY5YmZkfHJlYWQtd3JpdGU="
+        "accessToken": "M2QzZjllM2UtYWYwYS00YWY3LWFiMzUtY2U4NWZkMjFjNzE4fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -22,7 +22,11 @@
       "inputs": ["default", "^production"]
     },
     "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
     }
   },
   "namedInputs": {
@@ -33,23 +37,23 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
+    "sharedGlobals": []
   },
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "css",
+        "style": "styled-components",
         "linter": "eslint",
         "bundler": "vite",
         "babel": true
       },
       "component": {
-        "style": "css"
+        "style": "styled-components"
       },
       "library": {
-        "style": "css",
+        "style": "styled-components",
         "linter": "eslint",
-        "unitTestRunner": "none"
+        "unitTestRunner": "vitest"
       }
     }
   },

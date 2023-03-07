@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@erkjbro-tech/projects": ["projects/src/index.ts"],
-      "@erkjbro-tech/shared/meta": ["shared/meta/src/index.ts"],
-      "@erkjbro-tech/shared/ui": ["shared/ui/src/index.ts"]
+      "@erkjbro-tech/shared/meta": ["shared/meta/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Sitenav from './sitenav';
+import { Sitenav } from './sitenav';
 
 describe('Sitenav', () => {
   it('should render successfully', () => {
