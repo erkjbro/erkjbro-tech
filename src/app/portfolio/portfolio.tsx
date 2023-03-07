@@ -6,8 +6,13 @@ export interface PortfolioProps {
 }
 
 export const Portfolio: FC<PortfolioProps> = (props) => {
+  type Link = {
+    href: string;
+    text: string;
+  }
+
   // TODO: Retrieve link data from Contentful.
-  const linkData = [
+  const linkData: Link[] = [
     { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
     { href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
     { href: "https://github.com/erkjbro", text: "GitHub" },
@@ -24,8 +29,8 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
         <code>Working on an update to pull homepage data from Contentful...</code>
         <Hr />
         <StyledList>
-          {linkData.map((link, i) => (
-            <HtmlLink href={link.href} key={i}>{link.text}</HtmlLink>
+          {linkData.map(({ href, text }, i) => (
+            <HtmlLink href={href} key={i}>{text}</HtmlLink>
           ))}
         </StyledList>
       </Main>
