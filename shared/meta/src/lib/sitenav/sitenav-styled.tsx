@@ -4,31 +4,32 @@ import { NavLink } from 'react-router-dom';
 export const StyledSitenav = styled.nav`
   width: 100vw;
   min-height: 3rem;
-  padding: 0.8rem 2rem;
+  padding: 0.4rem 4rem;
   background-color: #11114a;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 480px) {
-    flex-direction: column;
+  @media (min-width: 480px) {
+    flex-direction: row;
+    padding: 0.8rem 2rem;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     justify-content: space-between;
-    padding: 0.4rem 4rem;
   }
 `;
 
 export const NavLeft = styled.div`
-  display: inherit;
+  display: none;
   min-width: 16rem;
   height: 6rem;
   margin: 0;
   padding: 0;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: inherit;
   }
 `;
 
@@ -36,14 +37,30 @@ export const NavRight = styled.ul`
   display: inherit;
   list-style: none;
   min-width: 16rem;
-  height: 6rem;
+  min-height: 3rem;
+  height: fit-content;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 
-  a {
+  @media (min-width: 480px) {
+    height: 6rem;
+    justify-content: flex-end;
+
+    li {
+      overflow: visible;
+
+      a {
+        &:active, &.active {
+          animation: push-up 1s ease-out forwards;
+        }
+      }
+    }
+  }
+
+  li a {
     text-decoration: none;
     display: inline-flex;
     align-self: center;
@@ -56,11 +73,17 @@ export const NavRight = styled.ul`
       color: #e8ef3d;
     }
   }
-  
-  @media (max-width: 480px) {
-    min-height: 3rem;
-    height: fit-content;
-    justify-content: space-evenly;
+
+  @keyframes push-up {
+    0% {
+      transform: translateY(0);
+    }
+    33% {
+      transform: translateY(-1.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 `;
 

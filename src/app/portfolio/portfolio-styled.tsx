@@ -7,14 +7,29 @@ export const PortfolioContainer = styled.div`
 `;
 
 export const Main = styled.div`
-  max-width: 800px;
-  margin: 0 5rem;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   text-align: left;
   
-  @media (max-width: 768px) {
-    margin: 0 1rem;
+  @media (min-width: 480px) {
+    margin: 0 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    max-width: 800px;
+    margin: 0 5rem;
+  }
+  
+  p a {
+    text-decoration: underline;
+    color: #11114a;
+    
+    &:hover {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: red;
+    }
   }
 `;
 
@@ -24,13 +39,21 @@ export const Hr = styled.hr`
 `;
 
 export const StyledList = styled.ul`
+  height: fit-content;  
   margin: 0.5rem;
   padding: 0.5rem 0.2rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: fit-content;
+  text-align: left;
+  
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    text-align: center;
+  }
   
   li {
     display: inherit;
@@ -38,8 +61,10 @@ export const StyledList = styled.ul`
   }
   
   li a {
+    width: 100px;    
     display: inherit;    
     padding: 0.2rem 0.4rem;
+    margin: 0.2rem 0;    
     border: 2px solid transparent;
     align-items: center;
     color: #11114a;
@@ -51,15 +76,9 @@ export const StyledList = styled.ul`
       border: 2px solid #11114a;
       border-radius: 10px;
     }
-  }
-  
-  @media (max-width: 480px) {
-    flex-direction: column;
-    text-align: left;
     
-    li a {
-      width: 100px;
-      margin: 0.2rem 0;
+    @media (min-width: 480px) {
+      width: fit-content;
     }
   }
 `;
