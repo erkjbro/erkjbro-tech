@@ -10,6 +10,10 @@ export const StyledSitenav = styled.nav`
   justify-content: space-evenly;
   align-items: center;
 
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+
   @media (max-width: 768px) {
     justify-content: space-between;
     padding: 0.4rem 4rem;
@@ -51,6 +55,12 @@ export const NavRight = styled.ul`
     &:hover, &:active, &.active {
       color: #e8ef3d;
     }
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 3rem;
+    height: fit-content;
+    justify-content: space-evenly;
   }
 `;
 
