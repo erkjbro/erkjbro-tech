@@ -12,6 +12,10 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const Hr = styled.hr`
@@ -25,15 +29,16 @@ export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   height: fit-content;
   
   li {
-    display: flex;
+    display: inherit;
     align-content: center;
   }
   
   li a {
-    display: flex;    
+    display: inherit;    
     padding: 0.2rem 0.4rem;
     border: 2px solid transparent;
     align-items: center;
@@ -45,6 +50,16 @@ export const StyledList = styled.ul`
     &:hover {
       border: 2px solid #11114a;
       border-radius: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    text-align: left;
+    
+    li a {
+      width: 100px;
+      margin: 0.2rem 0;
     }
   }
 `;
