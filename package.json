@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "e2e": "nx run e2e:e2e",
+    "lint": "nx lint"
   },
   "private": true,
   "dependencies": {

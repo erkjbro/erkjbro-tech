@@ -51,7 +51,7 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
   return (
     <PortfolioContainer>
       <div>
-        <h1>Erik J Brown Tech LLC</h1>
+        <h1>Erik J Brown</h1>
       </div>
       <Main>
         {content.introduction && (
