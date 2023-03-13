@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import Logo from './assets/ejb-black-logo-v2.png';
-import { HomeLink, NavLeft, NavRight, StyledLink, StyledSitenav } from './sitenav-styled';
+import Logo from "./assets/ejb-black-logo-v2.png";
+import { HomeLink, NavLeft, NavRight, StyledLink, StyledSitenav } from "./sitenav-styled";
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
 export interface SitenavProps {

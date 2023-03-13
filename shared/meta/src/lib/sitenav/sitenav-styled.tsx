@@ -88,21 +88,15 @@ export const NavRight = styled.ul`
 `;
 
 export const HomeLink = styled(NavLink)`
-  background-color: #11114a;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
-
-  a {
-    margin: 10rem 0;
-  }
 
   span {
+    display: flex;
     background-color: whitesmoke;
     padding: 10px;
     border: 4px solid #e8ef3d;
     border-radius: 50%;
-    min-width: fit-content;
   }
 `;
 
