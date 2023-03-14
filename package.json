@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "preview": "nx preview",
+    "http-server": "http-server dist/apps/erkjbro-tech",
     "build": "nx build",
     "test": "nx test",
     "e2e": "nx run e2e:e2e",
@@ -48,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "http-server": "^14.1.1",
     "jsdom": "~20.0.3",
     "nx": "15.8.5",
     "prettier": "^2.6.2",
