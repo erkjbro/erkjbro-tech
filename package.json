@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "nx serve --open --host",
     "preview": "nx preview",
     "http-server": "http-server dist/apps/erkjbro-tech",
     "build": "nx build",
