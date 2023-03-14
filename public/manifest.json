@@ -1,5 +1,5 @@
 {
-  "short_name": "Erik J Brown Site",
+  "short_name": "Erik J Brown Website",
   "name": "Erik J Brown's Portfolio Website",
   "icons": [
     {
@@ -20,6 +20,7 @@
   ],
   "start_url": ".",
   "orientation": "portrait",
+  "display_override": ["window-control-overlay", "minimal-ui", "browser"],
   "display": "standalone",
   "theme_color": "#e8ef3d",
   "background_color": "#11114a"
