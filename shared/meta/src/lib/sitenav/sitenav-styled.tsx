@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledSitenav = styled.nav`
   width: 100vw;
-  min-height: 3rem;
-  padding: 0.4rem 4rem;
+  min-height: 2rem;
+  padding: 0.6rem 4rem;
   background-color: #11114a;
   display: flex;
   flex-direction: column;
@@ -13,23 +13,8 @@ export const StyledSitenav = styled.nav`
 
   @media (min-width: 480px) {
     flex-direction: row;
-    padding: 0.8rem 2rem;
-  }
-
-  @media (min-width: 768px) {
     justify-content: space-between;
-  }
-`;
-
-export const NavLeft = styled.div`
-  display: none;
-  min-width: 16rem;
-  height: 6rem;
-  margin: 0;
-  padding: 0;
-
-  @media (min-width: 768px) {
-    display: inherit;
+    padding: 0.8rem 2rem;
   }
 `;
 
@@ -46,7 +31,6 @@ export const NavRight = styled.ul`
   justify-content: space-evenly;
 
   @media (min-width: 480px) {
-    height: 6rem;
     justify-content: flex-end;
 
     li {
