@@ -8,7 +8,7 @@ import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio-styled";
 export interface PortfolioProps {
 }
 
-export const Portfolio: FC<PortfolioProps> = (props) => {
+const Portfolio: FC<PortfolioProps> = (props) => {
   type Link = {
     href: string;
     text: string;
@@ -48,6 +48,7 @@ export const Portfolio: FC<PortfolioProps> = (props) => {
     })();
   }, [client]);
 
+  // TODO: Setup Suspense (Loading) and Error Boundary wrappers.
   return (
     <PortfolioContainer>
       <div>
@@ -97,3 +98,5 @@ const isValidHttpUrl = (val: string): boolean => {
   const re = new RegExp("^(http|https)://", "i");
   return re.test(val);
 };
+
+export default Portfolio;

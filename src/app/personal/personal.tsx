@@ -5,7 +5,7 @@ import { PersonalContainer } from './personal-styled';
 export interface PersonalProps {
 }
 
-export const Personal: FC<PersonalProps> = (props) => {
+const Personal: FC<PersonalProps> = (props) => {
   return (
     <PersonalContainer>
       <h1>About me as a person!</h1>
@@ -13,3 +13,5 @@ export const Personal: FC<PersonalProps> = (props) => {
     </PersonalContainer>
   );
 };
+
+export default Personal;
