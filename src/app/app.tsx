@@ -27,7 +27,7 @@ const App: FC = () => {
   );
 };
 
-const Loader = () => (
+ export const Loader = () => (
   <StyledLoader>
     <HashLoader
       color={"#11114a"}
@@ -41,7 +41,7 @@ const Loader = () => (
 
 const StyledLoader = styled.div`
   display: flex;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   justify-content: center;
   align-items: center;
 `;

@@ -1,14 +1,16 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useReducer, useState } from "react";
 import { createClient } from "contentful";
 import ReactMarkdown from "react-markdown";
 
-import { PortfolioContent, ContactList, StyledPortfolio } from "./portfolio.styled";
+import { ContactList, PortfolioContent, StyledPortfolio } from "./portfolio.styled";
+import { Loader } from "../app";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {
 }
 
 const Portfolio: FC<PortfolioProps> = (props) => {
+  // TODO: Move Contentful API logic to a separate file / area.
   type Link = {
     href: string;
     text: string;
@@ -17,6 +19,7 @@ const Portfolio: FC<PortfolioProps> = (props) => {
   type Field = {
     introduction: string;
     title: string;
+    header: string;
   }
 
   // TODO: Retrieve link data from Contentful. Could also be set as footer links
@@ -33,39 +36,108 @@ const Portfolio: FC<PortfolioProps> = (props) => {
     accessToken: import.meta.env.VITE_CONTENT_API_KEY
   });
 
-  const [content, setContent] = useState<Field>({ introduction: "", title: "" });
+  const INITIAL_CONTENT_STATE: Field = {
+    introduction: "",
+    title: "",
+    header: "Erik J Brown"
+  };
+
+  enum actionTypes {
+    UPDATE_CONTENT = "UPDATE_CONTENT"
+  }
+
+  type Action = {
+    type: actionTypes;
+    payload: Field;
+  }
+
+  const contentReducer = (state: Field, action: Action ): Field => {
+    switch (action.type) {
+      case actionTypes.UPDATE_CONTENT:
+        sessionStorage.setItem("portfolio", JSON.stringify({
+          ...state,
+          ...action.payload
+        }));
+        return { ...state, ...action.payload };
+      default:
+        return state;
+    }
+  }
+
+  // TODO: Move business logic to a separate store file.
+  const [content, dispatchContent] = useReducer(
+    contentReducer,
+    INITIAL_CONTENT_STATE,
+    () => {
+      const sessionContent = sessionStorage.getItem("portfolio");
+      if (sessionContent) {
+        console.info("Retrieved content from session storage.")
+        return JSON.parse(sessionContent);
+      } else {
+        return INITIAL_CONTENT_STATE;
+      }
+    }
+  );
+
+  // TODO: loading and error states should be
+  //  part of an async wrapper component.
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     (async () => {
-      const response = await client.getEntries({
-        content_type: "homepage",
-        order: "sys.createdAt"
-      });
-      if (response.items.length) {
+      try {
+        const sessionContent = sessionStorage.getItem("portfolio")
+
+        if (sessionContent)
+          return;
+
+        const response = await client.getEntries({
+          content_type: "homepage",
+          order: "sys.createdAt"
+        });
+
         const fields = response.items[0].fields as Field;
-        setContent(fields);
+
+        dispatchContent({
+          type: actionTypes.UPDATE_CONTENT,
+          payload: fields
+        });
+      } catch (e) {
+        console.error(e);
+        setError("Error retrieving content.");
+      } finally {
+        setLoading(false);
       }
     })();
-  }, [client]);
+  }, [actionTypes.UPDATE_CONTENT, client]);
 
-  // TODO: Setup Suspense (Loading) and Error Boundary wrappers.
+  // TODO: Setup Suspense (Loading) and Error Boundary wrappers for
+  //  pages with async content.
   return (
     <StyledPortfolio>
       <div>
-        <h1>Erik J Brown</h1>
+        <h1>{content?.header}</h1>
       </div>
-      <PortfolioContent>
-        {content.introduction && (
-          <ReactMarkdown>
-            {content.introduction}
-          </ReactMarkdown>
-        )}
-        <ContactList>
-          {linkData.map(({ href, text }, i) => (
-            <HtmlLink href={href} key={i}>{text}</HtmlLink>
-          ))}
-        </ContactList>
-      </PortfolioContent>
+      {/*TODO: Display error as snackbar notification. */}
+      {(!loading && error) ?? <p>{error}</p>}
+      {(loading && !error) ? <Loader /> : (
+        <>
+          <PortfolioContent>
+            {content.introduction && (
+              <ReactMarkdown>
+                {content.introduction}
+              </ReactMarkdown>
+            )}
+            <ContactList>
+              {linkData.map(({ href, text }, i) => (
+                <HtmlLink href={href} key={i}>{text}</HtmlLink>
+              ))}
+            </ContactList>
+          </PortfolioContent>
+          <code>Last edited on {content.title}</code>
+        </>
+      )}
     </StyledPortfolio>
   );
 };
