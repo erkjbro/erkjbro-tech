@@ -16,6 +16,10 @@ export const StyledSitenav = styled.nav`
     justify-content: space-between;
     padding: 0.8rem 2rem;
   }
+  
+  @media (min-width: 768px) {
+    padding: 0.8rem 8rem;
+  }
 `;
 
 export const NavRight = styled.ul`

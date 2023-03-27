@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 import styled from "styled-components";
 
-import { AppContainer } from "./app-styled";
+import { AppContainer } from "./app.styles";
 import Portfolio from "./portfolio/portfolio";
 import { Sitenav } from "@erkjbro-tech/shared/meta";
 

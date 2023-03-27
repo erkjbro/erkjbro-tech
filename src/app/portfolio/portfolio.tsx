@@ -1,8 +1,8 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { createClient } from "contentful";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
-import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio-styled";
+import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio.styles";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {

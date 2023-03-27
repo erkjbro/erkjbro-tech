@@ -1,11 +1,11 @@
-import { FC } from 'react';
-import { PersonalContainer } from './personal-styled';
+import { FC } from "react";
+import { PersonalContainer } from "./personal.styles";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PersonalProps {
 }
 
-const Personal: FC<PersonalProps> = (props) => {
+const Personal: FC<PersonalProps> = () => {
   return (
     <PersonalContainer>
       <h1>About me as a person!</h1>
