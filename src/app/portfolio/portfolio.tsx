@@ -52,13 +52,12 @@ const Portfolio: FC<PortfolioProps> = (props) => {
   }
 
   const contentReducer = (state: Field, action: Action ): Field => {
+    let newState: Field = state;
     switch (action.type) {
       case actionTypes.UPDATE_CONTENT:
-        sessionStorage.setItem("portfolio", JSON.stringify({
-          ...state,
-          ...action.payload
-        }));
-        return { ...state, ...action.payload };
+        newState = { ...newState, ...action.payload };
+        sessionStorage.setItem("portfolio", JSON.stringify(newState));
+        return newState
       default:
         return state;
     }
@@ -110,7 +109,7 @@ const Portfolio: FC<PortfolioProps> = (props) => {
         setLoading(false);
       }
     })();
-  }, [actionTypes.UPDATE_CONTENT, client]);
+  }, [actionTypes, client]);
 
   // TODO: Setup Suspense (Loading) and Error Boundary wrappers for
   //  pages with async content.

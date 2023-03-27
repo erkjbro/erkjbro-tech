@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import { CloseButton, ModalContent, StyledModal } from "./modal.styles";
+import { CloseButton, ModalContent, StyledModal } from "./modal.styled";
 
 /* eslint-disable-next-line */
 export interface ModalProps {
