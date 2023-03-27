@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@erkjbro-tech/shared/meta": ["shared/meta/src/index.ts"]
+      "@erkjbro-tech/shared/meta": ["shared/meta/src/index.ts"],
+      "@erkjbro-tech/shared/ui-library": ["shared/ui-library/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

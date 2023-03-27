@@ -9,7 +9,7 @@ import { Sitenav } from "@erkjbro-tech/shared/meta";
 
 const Personal = lazy(() => import("./personal/personal"));
 
-export const App: FC = () => {
+const App: FC = () => {
   const AppRoutes: FC = () => (
     <Routes>
       <Route path="/" element={<Portfolio />} />
@@ -45,3 +45,5 @@ const StyledLoader = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export default App;
