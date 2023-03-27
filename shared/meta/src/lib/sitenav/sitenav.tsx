@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import Logo from "./assets/ejb-black-logo-v2.png";
-import { SitenavBrand, SitenavLinks, StyledLink, StyledSitenav } from "./sitenav.styles";
+import { SitenavBrand, SitenavLinks, StyledLink, StyledSitenav } from "./sitenav.styled";
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
 export interface SitenavProps {

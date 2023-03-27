@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyledPersonal } from "./personal.styles";
+import { StyledPersonal } from "./personal.styled";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PersonalProps {

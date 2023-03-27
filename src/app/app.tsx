@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 import styled from "styled-components";
 
-import { StyledApp } from "./app.styles";
+import { StyledApp } from "./app.styled";
 import Portfolio from "./portfolio/portfolio";
 import { Sitenav } from "@erkjbro-tech/shared/meta";
 
