@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import Logo from "./assets/ejb-black-logo-v2.png";
-import { HomeLink, NavRight, StyledLink, StyledSitenav } from "./sitenav.styles";
+import { SitenavBrand, SitenavLinks, StyledLink, StyledSitenav } from "./sitenav.styles";
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
 export interface SitenavProps {
@@ -10,12 +10,12 @@ export interface SitenavProps {
 export const Sitenav: FC<SitenavProps> = (props) => {
   return (
     <StyledSitenav>
-      <HomeLink to="/">
+      <SitenavBrand to="/">
         <span>
           <img src={Logo} alt="logo" width="40px" />
         </span>
-      </HomeLink>
-      <NavRight>
+      </SitenavBrand>
+      <SitenavLinks>
         <li>
           <StyledLink to="/">
             Home
@@ -26,7 +26,7 @@ export const Sitenav: FC<SitenavProps> = (props) => {
             About Me
           </StyledLink>
         </li>
-      </NavRight>
+      </SitenavLinks>
     </StyledSitenav>
   );
 };

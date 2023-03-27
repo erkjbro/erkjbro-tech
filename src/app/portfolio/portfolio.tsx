@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import { createClient } from "contentful";
 import ReactMarkdown from "react-markdown";
 
-import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio.styles";
+import { PortfolioContent, StyledHr, StyledList, StyledPortfolio } from "./portfolio.styles";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {
@@ -50,24 +50,24 @@ const Portfolio: FC<PortfolioProps> = (props) => {
 
   // TODO: Setup Suspense (Loading) and Error Boundary wrappers.
   return (
-    <PortfolioContainer>
+    <StyledPortfolio>
       <div>
         <h1>Erik J Brown</h1>
       </div>
-      <Main>
+      <PortfolioContent>
         {content.introduction && (
           <ReactMarkdown>
             {content.introduction}
           </ReactMarkdown>
         )}
-        <Hr />
+        <StyledHr />
         <StyledList>
           {linkData.map(({ href, text }, i) => (
             <HtmlLink href={href} key={i}>{text}</HtmlLink>
           ))}
         </StyledList>
-      </Main>
-    </PortfolioContainer>
+      </PortfolioContent>
+    </StyledPortfolio>
   );
 };
 

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const PortfolioContainer = styled.div`
+export const StyledPortfolio = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const Main = styled.div`
+export const PortfolioContent = styled.div`
   margin: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@ export const Main = styled.div`
   }
 `;
 
-export const Hr = styled.hr`
+export const StyledHr = styled.hr`
   margin: 2rem 0 1rem 0;
   color: black;
 `;
