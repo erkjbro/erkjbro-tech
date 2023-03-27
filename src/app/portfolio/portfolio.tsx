@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import { createClient } from "contentful";
 import ReactMarkdown from "react-markdown";
 
-import { PortfolioContent, StyledHr, StyledList, StyledPortfolio } from "./portfolio.styled";
+import { PortfolioContent, ContactList, StyledPortfolio } from "./portfolio.styled";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {
@@ -60,12 +60,11 @@ const Portfolio: FC<PortfolioProps> = (props) => {
             {content.introduction}
           </ReactMarkdown>
         )}
-        <StyledHr />
-        <StyledList>
+        <ContactList>
           {linkData.map(({ href, text }, i) => (
             <HtmlLink href={href} key={i}>{text}</HtmlLink>
           ))}
-        </StyledList>
+        </ContactList>
       </PortfolioContent>
     </StyledPortfolio>
   );
