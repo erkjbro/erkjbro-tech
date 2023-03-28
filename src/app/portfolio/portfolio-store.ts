@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { type LinkFields, type PortfolioFields } from "./portfolio-types";
+import type { ContactFields, PortfolioFields } from "./portfolio-types";
 import ContentfulApi, { ContentOptions } from "./portfolio-api";
 
 const SPACE_ID: string = import.meta.env.VITE_CONTENT_SPACE_ID;
@@ -11,26 +11,28 @@ export enum FetchStatus {
   ERROR = "error"
 }
 
-export type PortfolioStoreTuple = [FetchStatus, PortfolioFields, LinkFields[]];
+// TODO: Convert to a static page store for an api lib component.
+export type PortfolioStoreTuple = [FetchStatus, PortfolioFields, ContactFields[]];
 
 const usePortfolioStore = (): PortfolioStoreTuple => {
+  // TODO: Convert to StaticPageFields.
   const INITIAL_STATE: PortfolioFields = {
     introduction: "",
     title: "",
+    body: "",
     header: "Erik J Brown"
   };
 
   // TODO: Move to a footer component (or someplace else), and fetch from Contentful.
-  const LINK_DATA: LinkFields[] = [
-    { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
-    { href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
-    { href: "https://github.com/erkjbro", text: "GitHub" },
-    { href: "https://twitter.com/erkjbro", text: "Twitter" },
-    { href: "https://www.upwork.com/fl/erkjbro", text: "Upwork" }
+  const LINK_DATA: ContactFields[] = [
+    { title: "", href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
+    { title: "", href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
+    { title: "", href: "https://github.com/erkjbro", text: "GitHub" },
+    { title: "", href: "https://twitter.com/erkjbro", text: "Twitter" },
+    { title: "", href: "https://www.upwork.com/fl/erkjbro", text: "Upwork" }
   ];
 
   type ActionTypes = "SET_PORTFOLIO";
-
   type Actions = {
     type: ActionTypes;
     payload?: PortfolioFields;
