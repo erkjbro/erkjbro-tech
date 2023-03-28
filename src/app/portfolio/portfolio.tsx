@@ -1,9 +1,9 @@
 import type { FC, ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 
-import usePortfolioStore, { FetchStatus } from "./portfolio-store";
+import usePortfolioStore from "./portfolio-store";
 import { ContactList, PortfolioContent, StyledPortfolio } from "./portfolio.styled";
-import { Loader } from "../app";
+import { AsyncWrapper } from "@erkjbro-tech/shared/meta";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {
@@ -12,17 +12,12 @@ export interface PortfolioProps {
 const Portfolio: FC<PortfolioProps> = (props) => {
   const [status, portfolio, links] = usePortfolioStore();
 
-  // TODO: Setup Suspense (Loading) and Error Boundary wrappers for
-  //  pages with async content.
   return (
-    <StyledPortfolio>
-      <div>
-        <h1>{portfolio.header}</h1>
-      </div>
-      {/*TODO: Display error as snackbar notification. */}
-      {status === FetchStatus.ERROR && <p>Oops! Something went wrong.</p>}
-      {status === FetchStatus.LOADING && <Loader />}
-      {status === FetchStatus.SUCCESS && (
+    <AsyncWrapper status={status}>
+      <StyledPortfolio>
+        <div>
+          <h1>{portfolio.header}</h1>
+        </div>
         <PortfolioContent>
           <ReactMarkdown>
             {portfolio.introduction}
@@ -33,11 +28,11 @@ const Portfolio: FC<PortfolioProps> = (props) => {
             ))}
           </ContactList>
           <code style={{ textAlign: "center" }}>
-            Last edited on {portfolio.title}
+            Last updated: {portfolio.title}
           </code>
         </PortfolioContent>
-      )}
-    </StyledPortfolio>
+      </StyledPortfolio>
+    </AsyncWrapper>
   );
 };
 

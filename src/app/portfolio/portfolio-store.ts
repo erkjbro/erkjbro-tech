@@ -1,15 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
+
+import { FetchStatus } from "@erkjbro-tech/shared/meta";
 import type { ContactFields, PortfolioFields } from "./portfolio-types";
 import ContentfulApi, { ContentOptions } from "./portfolio-api";
 
 const SPACE_ID: string = import.meta.env.VITE_CONTENT_SPACE_ID;
 const API_KEY: string = import.meta.env.VITE_CONTENT_API_KEY;
-
-export enum FetchStatus {
-  LOADING = "loading",
-  SUCCESS = "success",
-  ERROR = "error"
-}
 
 // TODO: Convert to a static page store for an api lib component.
 export type PortfolioStoreTuple = [FetchStatus, PortfolioFields, ContactFields[]];
