@@ -1,2 +1,2 @@
 export * from './lib/async-wrapper/async-wrapper';
-export * from './lib/sitenav/sitenav';
+export { default as Sitenav } from './lib/sitenav/sitenav';

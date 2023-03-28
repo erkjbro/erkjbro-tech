@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { type FC } from "react";
 
 import Logo from "./assets/ejb-black-logo-v2.png";
 import { SitenavBrand, SitenavLinks, StyledLink, StyledSitenav } from "./sitenav.styled";
@@ -7,7 +7,7 @@ import { SitenavBrand, SitenavLinks, StyledLink, StyledSitenav } from "./sitenav
 export interface SitenavProps {
 }
 
-export const Sitenav: FC<SitenavProps> = (props) => {
+const Sitenav: FC<SitenavProps> = (props) => {
   return (
     <StyledSitenav>
       <SitenavBrand to="/">
@@ -30,3 +30,5 @@ export const Sitenav: FC<SitenavProps> = (props) => {
     </StyledSitenav>
   );
 };
+
+export default Sitenav;
