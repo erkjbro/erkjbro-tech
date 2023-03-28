@@ -1,5 +1,5 @@
 import { type ContentfulClientApi, createClient } from "contentful";
-import { PortfolioFields } from "./portfolio-types";
+import { type PortfolioFields } from "./portfolio-types";
 
 export enum ContentOptions {
   HOMEPAGE = "homepage",

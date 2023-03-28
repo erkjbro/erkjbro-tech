@@ -1,23 +1,26 @@
 import { useEffect, useReducer, useState } from "react";
-import { LinkFields, PortfolioFields } from "./portfolio-types";
+import { type LinkFields, type PortfolioFields } from "./portfolio-types";
 import ContentfulApi, { ContentOptions } from "./portfolio-api";
 
-const SPACE_ID = import.meta.env.VITE_CONTENT_SPACE_ID;
-const API_KEY = import.meta.env.VITE_CONTENT_API_KEY;
+const SPACE_ID: string = import.meta.env.VITE_CONTENT_SPACE_ID;
+const API_KEY: string = import.meta.env.VITE_CONTENT_API_KEY;
 
-const usePortfolioStore = () => {
-  type Action = {
-    type: "SET_PORTFOLIO";
-    payload: PortfolioFields;
-  }
+export enum FetchStatus {
+  LOADING = "loading",
+  SUCCESS = "success",
+  ERROR = "error"
+}
 
+export type PortfolioStoreTuple = [FetchStatus, PortfolioFields, LinkFields[]];
+
+const usePortfolioStore = (): PortfolioStoreTuple => {
   const INITIAL_STATE: PortfolioFields = {
     introduction: "",
     title: "",
     header: "Erik J Brown"
   };
 
-  // TODO: Retrieve link data from Contentful. Could also be set as footer links
+  // TODO: Move to a footer component (or someplace else), and fetch from Contentful.
   const LINK_DATA: LinkFields[] = [
     { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
     { href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
@@ -26,11 +29,17 @@ const usePortfolioStore = () => {
     { href: "https://www.upwork.com/fl/erkjbro", text: "Upwork" }
   ];
 
-  const reducer = (state: PortfolioFields, action: Action): PortfolioFields => {
-    let newState: PortfolioFields = state;
+  type ActionTypes = "SET_PORTFOLIO";
+
+  type Actions = {
+    type: ActionTypes;
+    payload?: PortfolioFields;
+  }
+
+  const reducer = (state: PortfolioFields, action: Actions): PortfolioFields => {
+    const newState = Object.assign({}, state, action.payload);
     switch (action.type) {
       case "SET_PORTFOLIO":
-        newState = { ...newState, ...action.payload };
         sessionStorage.setItem("portfolio", JSON.stringify(newState));
         return newState;
       default:
@@ -38,20 +47,15 @@ const usePortfolioStore = () => {
     }
   };
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  const [state, dispatch] = useReducer(
-    reducer,
-    INITIAL_STATE
-  );
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [status, setStatus] = useState<FetchStatus>(FetchStatus.LOADING);
 
   useEffect(() => {
     const storedPortfolio = sessionStorage.getItem("portfolio");
 
     if (storedPortfolio) {
       console.info("Retrieved portfolio data from session storage.");
-      setLoading(false);
+      setStatus(FetchStatus.SUCCESS);
       return dispatch({
         type: "SET_PORTFOLIO",
         payload: JSON.parse(storedPortfolio)
@@ -67,21 +71,15 @@ const usePortfolioStore = () => {
           type: "SET_PORTFOLIO",
           payload: data
         });
+        setStatus(FetchStatus.SUCCESS);
       } catch (error) {
         console.error(error);
-        setError("Error retrieving page content.");
-      } finally {
-        setLoading(false);
+        setStatus(FetchStatus.ERROR);
       }
     })();
   }, []);
 
-  return {
-    portfolio: state,
-    links: LINK_DATA,
-    loading,
-    error
-  };
+  return [status, state, LINK_DATA];
 };
 
 export default usePortfolioStore;

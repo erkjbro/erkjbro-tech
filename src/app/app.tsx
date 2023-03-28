@@ -1,4 +1,4 @@
-import { FC, lazy, Suspense } from "react";
+import { type FC, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 import styled from "styled-components";

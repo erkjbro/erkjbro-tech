@@ -1,7 +1,7 @@
-import { FC, ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 
-import usePortfolioStore from "./portfolio-store";
+import usePortfolioStore, { FetchStatus } from "./portfolio-store";
 import { ContactList, PortfolioContent, StyledPortfolio } from "./portfolio.styled";
 import { Loader } from "../app";
 
@@ -10,12 +10,7 @@ export interface PortfolioProps {
 }
 
 const Portfolio: FC<PortfolioProps> = (props) => {
-  const {
-    portfolio,
-    links,
-    loading,
-    error
-  } = usePortfolioStore();
+  const [status, portfolio, links] = usePortfolioStore();
 
   // TODO: Setup Suspense (Loading) and Error Boundary wrappers for
   //  pages with async content.
@@ -25,15 +20,16 @@ const Portfolio: FC<PortfolioProps> = (props) => {
         <h1>{portfolio.header}</h1>
       </div>
       {/*TODO: Display error as snackbar notification. */}
-      {(!loading && error) ?? <p>{error}</p>}
-      {loading ? <Loader /> : (
+      {status === FetchStatus.ERROR && <p>Oops! Something went wrong.</p>}
+      {status === FetchStatus.LOADING && <Loader />}
+      {status === FetchStatus.SUCCESS && (
         <PortfolioContent>
           <ReactMarkdown>
             {portfolio.introduction}
           </ReactMarkdown>
           <ContactList>
-            {links.map((links, i) => (
-              <HtmlLink key={i} {...links} />
+            {links.map((fields, i) => (
+              <HtmlLink key={i} {...fields} />
             ))}
           </ContactList>
           <code style={{ textAlign: "center" }}>
