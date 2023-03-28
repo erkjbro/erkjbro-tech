@@ -32,8 +32,8 @@ const Portfolio: FC<PortfolioProps> = (props) => {
             {portfolio.introduction}
           </ReactMarkdown>
           <ContactList>
-            {links.map(({ href, text }, i) => (
-              <HtmlLink href={href} key={i}>{text}</HtmlLink>
+            {links.map((links, i) => (
+              <HtmlLink key={i} {...links} />
             ))}
           </ContactList>
           <code style={{ textAlign: "center" }}>
@@ -46,11 +46,12 @@ const Portfolio: FC<PortfolioProps> = (props) => {
 };
 
 interface HtmlLinkProps {
-  children: ReactNode;
+  children?: ReactNode;
   href: string;
+  text: string;
 }
 
-const HtmlLink: FC<HtmlLinkProps> = ({ href, children }) => {
+const HtmlLink: FC<HtmlLinkProps> = ({ href, text, children }) => {
   const aProps = isValidHttpUrl(href) ? ({
     href,
     hrefLang: "en-US",
@@ -63,7 +64,7 @@ const HtmlLink: FC<HtmlLinkProps> = ({ href, children }) => {
 
   return (
     <li><a {...aProps}>
-      {children}
+      {children ?? text}
     </a></li>
   );
 };
