@@ -1,9 +1,8 @@
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
 
-import { App } from "./app";
 import { GlobalStyle } from "./main.styled";
+import { App } from "./app";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,8 +11,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <GlobalStyle />
-    <Router>
-      <App />
-    </Router>
+    <App />
   </StrictMode>
 );

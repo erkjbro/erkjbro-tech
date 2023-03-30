@@ -1,49 +1,20 @@
-import { type FC, lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import HashLoader from "react-spinners/HashLoader";
-import styled from "styled-components";
+import { type FC } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { StyledApp } from "./app.styled";
-import Portfolio from "./portfolio/portfolio";
-import { Sitenav } from "@erkjbro-tech/shared/meta";
+import { Loader } from "@erkjbro-tech/shared/ui-library";
+import { routes } from "./routes";
 
-const Personal = lazy(() => import("./personal/personal"));
-
-const App: FC = () => {
-  const AppRoutes: FC = () => (
-    <Routes>
-      <Route path="/" element={<Portfolio />} />
-      <Route path="/personal" element={<Personal />} />
-    </Routes>
-  );
-
-  return (
-    <StyledApp>
-      <Sitenav />
-      <Suspense fallback={<Loader />}>
-        <AppRoutes />
-      </Suspense>
-    </StyledApp>
-  );
-};
-
- export const Loader = () => (
-  <StyledLoader>
-    <HashLoader
-      color={"#11114a"}
-      loading={true}
-      size={100}
-      aria-label="Loading Spinner"
-      data-testid="hash-loader"
-    />
-  </StyledLoader>
+const router = createBrowserRouter(
+  routes
 );
 
-const StyledLoader = styled.div`
-  display: flex;
-  padding: 3rem 1rem;
-  justify-content: center;
-  align-items: center;
-`;
+const App: FC = () => {
+  return (
+    <RouterProvider
+      router={router}
+      fallbackElement={<Loader />}
+    />
+  )
+}
 
 export default App;

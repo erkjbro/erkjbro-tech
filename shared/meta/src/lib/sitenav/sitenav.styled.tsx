@@ -89,4 +89,8 @@ export const SitenavBrand = styled(NavLink)`
 `;
 
 export const StyledLink = styled(NavLink)`
+  &:focus-visible {
+    border-color: transparent;
+    border-bottom: #e8ef3d;
+  }
 `;

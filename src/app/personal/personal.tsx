@@ -1,17 +1,21 @@
-import { FC } from "react";
+// import { FC } from "react";
+import { useLoaderData } from "react-router-dom";
+
 import { StyledPersonal } from "./personal.styled";
 
-/* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
-export interface PersonalProps {
+export const loader = async (): Promise<string> => {
+  await new Promise((r) => setTimeout(r, 500));
+  return "Loader should be handling async data fetching...";
 }
 
-const Personal: FC<PersonalProps> = () => {
+export const Component = () => {
+  const data = useLoaderData();
+
   return (
     <StyledPersonal>
-      <h1>About me as a person!</h1>
+      <h1>About me!</h1>
       <p>My name is Erik. I like video games, building PC's, Jeeps, Mountain Bikes, and more!</p>
+      <p>{`${data}`}</p>
     </StyledPersonal>
   );
-};
-
-export default Personal;
+}
