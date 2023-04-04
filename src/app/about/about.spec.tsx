@@ -1,10 +1,17 @@
 import { render } from '@testing-library/react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { Component } from './about';
+import { About } from './about';
 
-describe('Personal', () => {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <About />,
+  }
+]);
+describe('About', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Component />);
+    const { baseElement } = render(<RouterProvider router={router} />);
     expect(baseElement).toBeTruthy();
   });
 });

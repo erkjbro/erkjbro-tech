@@ -1,14 +1,14 @@
 import { type FC } from "react";
 import HashLoader from "react-spinners/HashLoader";
 
-import { StyledLoader } from "./loader.styled";
+import { StyledSpinner } from "./spinner.styled";
 
 /* eslint-disable-next-line */
-export interface LoaderProps {
+export interface SpinnerProps {
 }
 
-export const Loader: FC<LoaderProps> = () => (
-  <StyledLoader>
+export const Spinner: FC<SpinnerProps> = () => (
+  <StyledSpinner>
     <HashLoader
       color={"#11114a"}
       loading={true}
@@ -16,7 +16,7 @@ export const Loader: FC<LoaderProps> = () => (
       aria-label="Loading Spinner"
       data-testid="hash-loader"
     />
-  </StyledLoader>
+  </StyledSpinner>
 );
 
-export default Loader;
+export default Spinner;

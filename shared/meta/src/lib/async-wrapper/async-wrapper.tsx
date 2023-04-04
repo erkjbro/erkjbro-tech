@@ -1,7 +1,7 @@
 import { Suspense, type ReactNode, type FC } from 'react';
 import { Await } from "react-router-dom";
 
-import { Loader } from '@erkjbro-tech/shared/ui-library';
+import { Spinner } from '@erkjbro-tech/shared/ui-library';
 
 export enum FetchStatus {
   LOADING = "loading",
@@ -21,12 +21,12 @@ const Error: FC = () => <p>Oops! Something went wrong.</p>;
 const AsyncWrapper: FC<AsyncWrapperProps> = ({ status, dataToResolve, children }) => {
   switch(status) {
     case FetchStatus.LOADING:
-      return <Loader />;
+      return <Spinner />;
     case FetchStatus.ERROR:
       return <Error />;
     case FetchStatus.SUCCESS:
       return (
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Spinner />}>
           <Await
             resolve={dataToResolve}
             errorElement={<Error />}
