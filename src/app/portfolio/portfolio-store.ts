@@ -12,7 +12,6 @@ const API_KEY: string = import.meta.env.VITE_CONTENT_API_KEY;
 export type PortfolioStoreTuple = [FetchStatus, StaticPageFields, ContactFields[]];
 
 const usePortfolioStore = (): PortfolioStoreTuple => {
-  // TODO: Convert to StaticPageFields.
   const INITIAL_STATE: StaticPageFields = {
     title: "",
     body: "",

@@ -51,7 +51,7 @@ export const routes: RouteObject[] = [
           {
             path: "about",
             // lazy import only works if the file exports a component named "Component"... :(
-            lazy: () => import("./personal/personal")
+            lazy: () => import("./about")
           },
           {
             path: "*",

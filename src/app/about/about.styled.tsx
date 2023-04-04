@@ -1,4 +1,4 @@
 import styled from 'styled-components';
 
-export const StyledPersonal = styled.div`
+export const StyledAbout = styled.div`
 `;
