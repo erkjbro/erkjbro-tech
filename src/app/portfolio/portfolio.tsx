@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import { type FC, type ReactNode, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 import usePortfolioStore from "./portfolio-store";
@@ -12,24 +12,25 @@ export interface PortfolioProps {
 const Portfolio: FC<PortfolioProps> = (props) => {
   const [status, portfolio, links] = usePortfolioStore();
 
+  useEffect(() => {
+    document.title = `Erik J Brown | ${portfolio.title}`
+  }, [portfolio.title]);
+
   return (
-    <AsyncWrapper status={status}>
+    <AsyncWrapper status={status} dataToResolve={portfolio}>
       <StyledPortfolio>
         <div>
           <h1>{portfolio.header}</h1>
         </div>
         <PortfolioContent>
           <ReactMarkdown>
-            {portfolio.introduction}
+            {portfolio.body}
           </ReactMarkdown>
           <ContactList>
             {links.map((fields, i) => (
               <HtmlLink key={i} {...fields} />
             ))}
           </ContactList>
-          <code style={{ textAlign: "center" }}>
-            Last updated: {portfolio.title}
-          </code>
         </PortfolioContent>
       </StyledPortfolio>
     </AsyncWrapper>

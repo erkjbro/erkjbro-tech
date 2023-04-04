@@ -11,8 +11,4 @@ export type StaticPageFields = {
   body: string;
 }
 
-export type PortfolioFields = StaticPageFields & {
-  introduction: string;
-}
-
-export type AllFields = PortfolioFields | StaticPageFields | ContactFields;
+export type AllFields = StaticPageFields | ContactFields;

@@ -1,19 +1,19 @@
 import { useEffect, useReducer, useState } from "react";
+// import { defer } from "react-router-dom";
 
 import { FetchStatus } from "@erkjbro-tech/shared/meta";
-import type { ContactFields, PortfolioFields } from "./portfolio-types";
-import ContentfulApi, { ContentOptions } from "./portfolio-api";
+import { ContentfulApi, ContentTypes } from "@erkjbro-tech/shared/apis";
+import type { ContactFields, StaticPageFields } from "@erkjbro-tech/shared/apis";
 
 const SPACE_ID: string = import.meta.env.VITE_CONTENT_SPACE_ID;
 const API_KEY: string = import.meta.env.VITE_CONTENT_API_KEY;
 
 // TODO: Convert to a static page store for an api lib component.
-export type PortfolioStoreTuple = [FetchStatus, PortfolioFields, ContactFields[]];
+export type PortfolioStoreTuple = [FetchStatus, StaticPageFields, ContactFields[]];
 
 const usePortfolioStore = (): PortfolioStoreTuple => {
   // TODO: Convert to StaticPageFields.
-  const INITIAL_STATE: PortfolioFields = {
-    introduction: "",
+  const INITIAL_STATE: StaticPageFields = {
     title: "",
     body: "",
     header: "Erik J Brown"
@@ -31,10 +31,10 @@ const usePortfolioStore = (): PortfolioStoreTuple => {
   type ActionTypes = "SET_PORTFOLIO";
   type Actions = {
     type: ActionTypes;
-    payload?: PortfolioFields;
+    payload?: StaticPageFields;
   }
 
-  const reducer = (state: PortfolioFields, action: Actions): PortfolioFields => {
+  const reducer = (state: StaticPageFields, action: Actions): StaticPageFields => {
     const newState = Object.assign({}, state, action.payload);
     switch (action.type) {
       case "SET_PORTFOLIO":
@@ -63,7 +63,9 @@ const usePortfolioStore = (): PortfolioStoreTuple => {
     (async () => {
       try {
         const api = new ContentfulApi(SPACE_ID, API_KEY);
-        const data = await api.get(ContentOptions.HOMEPAGE);
+        const data = await api.get(
+          ContentTypes.PORTFOLIO
+        );
 
         dispatch({
           type: "SET_PORTFOLIO",
