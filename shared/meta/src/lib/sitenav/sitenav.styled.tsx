@@ -33,18 +33,13 @@ export const SitenavLinks = styled.ul`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
+  overflow: visible;
 
   @media (min-width: 480px) {
     justify-content: flex-end;
 
     li {
       overflow: visible;
-
-      a {
-        &:active, &.active {
-          animation: push-up 1s ease-out forwards;
-        }
-      }
     }
   }
 
@@ -88,7 +83,15 @@ export const SitenavBrand = styled(NavLink)`
   }
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
+  &:active, &.active {
+    animation: push-up 1s ease-out forwards;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+  
   &:focus-visible {
     border-color: transparent;
     border-bottom: #e8ef3d;
