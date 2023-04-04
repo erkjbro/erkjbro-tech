@@ -6,8 +6,8 @@
 
 ### Sites for ErkjbroTech (currently hosted on Amplify)
 
-- [Production](https://erkjbro.tech)
-- [Staging](https://dev.erkjbro.tech)
+- [Production](https://erikjbrown.tech)
+- [Staging](https://dev.erikjbrown.tech)
 
 Currently, this site is in development to make use of Nx, Vite, and Styled Components.
 I've been working with mostly Python for 2022, so I'm trying to modernize my approach

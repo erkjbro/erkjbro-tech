@@ -1,33 +1,34 @@
-import { FC } from 'react';
+import { type FC } from "react";
 
-import Logo from './assets/ejb-black-logo-v2.png';
-import { HomeLink, NavLeft, NavRight, StyledLink, StyledSitenav } from './sitenav-styled';
+import Logo from "./assets/ejb-black-logo-v2.png";
+import { SitenavBrand, SitenavLinks, StyledNavLink, StyledSitenav } from "./sitenav.styled";
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
 export interface SitenavProps {
 }
 
-export const Sitenav: FC<SitenavProps> = (props) => {
+const Sitenav: FC<SitenavProps> = (props) => {
   return (
     <StyledSitenav>
-      <NavLeft />
-      <HomeLink to="/">
+      <SitenavBrand to="/">
         <span>
-          <img src={Logo} alt="logo" width="50px" />
+          <img src={Logo} alt="logo" width="40px" />
         </span>
-      </HomeLink>
-      <NavRight>
+      </SitenavBrand>
+      <SitenavLinks>
         <li>
-          <StyledLink to="/">
-            Home
-          </StyledLink>
+          <StyledNavLink to="/">
+            Portfolio
+          </StyledNavLink>
         </li>
         <li>
-          <StyledLink to="/personal">
+          <StyledNavLink to="/about">
             About Me
-          </StyledLink>
+          </StyledNavLink>
         </li>
-      </NavRight>
+      </SitenavLinks>
     </StyledSitenav>
   );
 };
+
+export default Sitenav;

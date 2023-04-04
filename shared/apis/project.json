@@ -1,0 +1,34 @@
+{
+  "name": "shared-apis",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shared/apis/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/./shared/apis",
+        "main": "shared/apis/src/index.ts",
+        "tsConfig": "shared/apis/tsconfig.lib.json",
+        "assets": ["shared/apis/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["shared/apis/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/shared/apis"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/shared/apis"
+      }
+    }
+  },
+  "tags": []
+}
