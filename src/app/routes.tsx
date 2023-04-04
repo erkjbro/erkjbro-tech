@@ -1,22 +1,8 @@
 import { FC } from "react";
-import { Outlet, type RouteObject, useNavigation, useRouteError } from "react-router-dom";
-import { Sitenav } from "@erkjbro-tech/shared/meta";
+import { Outlet, type RouteObject, useRouteError } from "react-router-dom";
 
 import Portfolio from "./portfolio/portfolio";
-import { StyledApp as StyledLayout } from "./app.styled";
-
-const Layout: FC = () => {
-  const navigation = useNavigation();
-  return (
-    <StyledLayout>
-      <Sitenav />
-      <div>
-        {navigation.state !== "idle" && <p>Navigation in progress...</p>}
-      </div>
-      <Outlet />
-    </StyledLayout>
-  );
-};
+import { Layout } from "@erkjbro-tech/shared/meta";
 
 const RootErrorBoundary: FC = () => {
   const error = useRouteError() as Error;
