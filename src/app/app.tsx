@@ -1,23 +1,20 @@
-import { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { type FC } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { AppContainer } from './app-styled';
-import { Portfolio } from './portfolio/portfolio';
-import { Personal } from './personal/personal';
-import { Sitenav } from '@erkjbro-tech/shared/meta';
+import { Spinner } from "@erkjbro-tech/shared/ui-library";
+import { routes } from "./routes";
 
-export const App: FC = () => {
-  const AppRoutes: FC = () => (
-    <Routes>
-      <Route path="/" element={<Portfolio />} />
-      <Route path="/personal" element={<Personal />} />
-    </Routes>
-  );
+const router = createBrowserRouter(
+  routes
+);
 
+const App: FC = () => {
   return (
-    <AppContainer>
-      <Sitenav />
-      <AppRoutes />
-    </AppContainer>
-  );
-};
+    <RouterProvider
+      router={router}
+      fallbackElement={<Spinner />}
+    />
+  )
+}
+
+export default App;

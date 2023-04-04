@@ -1,81 +1,49 @@
-import { FC, ReactNode, useEffect, useState } from "react";
-import { createClient } from "contentful";
-import ReactMarkdown from 'react-markdown';
+import { type FC, type ReactNode, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
-import { Hr, Main, PortfolioContainer, StyledList } from "./portfolio-styled";
+import usePortfolioStore from "./portfolio-store";
+import { ContactList, PortfolioContent, StyledPortfolio } from "./portfolio.styled";
+import { AsyncWrapper } from "@erkjbro-tech/shared/meta";
 
 /* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
 export interface PortfolioProps {
 }
 
-export const Portfolio: FC<PortfolioProps> = (props) => {
-  type Link = {
-    href: string;
-    text: string;
-  }
-
-  type Field = {
-    introduction: string;
-    title: string;
-  }
-
-  // TODO: Retrieve link data from Contentful. Could also be set as footer links
-  const linkData: Link[] = [
-    { href: "mailto:erkjbro@erikjbrown.tech", text: "Email" },
-    { href: "https://www.linkedin.com/in/erkjbro/", text: "LinkedIn" },
-    { href: "https://github.com/erkjbro", text: "GitHub" },
-    { href: "https://twitter.com/erkjbro", text: "Twitter" },
-    { href: "https://www.upwork.com/fl/erkjbro", text: "Upwork" }
-  ];
-
-  const client = createClient({
-    space: import.meta.env.VITE_CONTENT_SPACE_ID,
-    accessToken: import.meta.env.VITE_CONTENT_API_KEY
-  });
-
-  const [content, setContent] = useState<Field>({ introduction: "", title: "" });
+const Portfolio: FC<PortfolioProps> = (props) => {
+  const [status, portfolio, links] = usePortfolioStore();
 
   useEffect(() => {
-    (async () => {
-      const response = await client.getEntries({
-        content_type: "homepage",
-        order: "sys.createdAt"
-      });
-      if (response.items.length) {
-        const fields = response.items[0].fields as Field;
-        setContent(fields);
-      }
-    })();
-  }, [client]);
+    document.title = `Erik J Brown | ${portfolio.title}`
+  }, [portfolio.title]);
 
   return (
-    <PortfolioContainer>
-      <div>
-        <h1>Erik J Brown</h1>
-      </div>
-      <Main>
-        {content.introduction && (
+    <AsyncWrapper status={status} dataToResolve={portfolio}>
+      <StyledPortfolio>
+        <div>
+          <h1>{portfolio.header}</h1>
+        </div>
+        <PortfolioContent>
           <ReactMarkdown>
-            {content.introduction}
+            {portfolio.body}
           </ReactMarkdown>
-        )}
-        <Hr />
-        <StyledList>
-          {linkData.map(({ href, text }, i) => (
-            <HtmlLink href={href} key={i}>{text}</HtmlLink>
-          ))}
-        </StyledList>
-      </Main>
-    </PortfolioContainer>
+          <ContactList>
+            {links.map((fields, i) => (
+              <HtmlLink key={i} {...fields} />
+            ))}
+          </ContactList>
+        </PortfolioContent>
+      </StyledPortfolio>
+    </AsyncWrapper>
   );
 };
 
 interface HtmlLinkProps {
-  children: ReactNode;
+  children?: ReactNode;
   href: string;
+  text: string;
 }
 
-const HtmlLink: FC<HtmlLinkProps> = ({ href, children }) => {
+const HtmlLink: FC<HtmlLinkProps> = ({ href, text, children }) => {
   const aProps = isValidHttpUrl(href) ? ({
     href,
     hrefLang: "en-US",
@@ -88,7 +56,7 @@ const HtmlLink: FC<HtmlLinkProps> = ({ href, children }) => {
 
   return (
     <li><a {...aProps}>
-      {children}
+      {children ?? text}
     </a></li>
   );
 };
@@ -97,3 +65,5 @@ const isValidHttpUrl = (val: string): boolean => {
   const re = new RegExp("^(http|https)://", "i");
   return re.test(val);
 };
+
+export default Portfolio;

@@ -2,13 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Erik J Brown Tech LLC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#e8ef3d">
+    <meta name="theme-color" content="#e8ef3d" />
+    <meta
+      name="description"
+      content="Portfolio site for Erik J Brown, a rootin' tootin' software engineer."
+    />
     <base href="/" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#11114a">
+    <link rel="manifest" href="/manifest.json" />
+    <title>Erik J Brown</title>
   </head>
   <body>
+    <noscript>
+      <strong>
+        I'm sorry, but Erik J Brown's website doesn't work properly without
+        JavaScript enabled. Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="backdrop-hook"></div>
+    <div id="drawer-hook"></div>
+    <div id="snackbar-hook"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

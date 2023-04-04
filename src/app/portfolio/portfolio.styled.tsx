@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const PortfolioContainer = styled.div`
+export const StyledPortfolio = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const Main = styled.div`
+export const PortfolioContent = styled.div`
   margin: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -25,23 +25,19 @@ export const Main = styled.div`
     text-decoration: underline;
     color: #11114a;
     
-    &:hover {
+    &:hover, &:focus {
       text-decoration: none;
-      text-transform: uppercase;
-      color: red;
+      text-transform: capitalize;
+      color: blue;      
     }
   }
 `;
 
-export const Hr = styled.hr`
-  margin: 2rem 0 1rem 0;
-  color: black;
-`;
-
-export const StyledList = styled.ul`
+export const ContactList = styled.ul`
   height: fit-content;  
-  margin: 0.5rem;
-  padding: 0.5rem 0.2rem;
+  margin: 1.2rem 0.5rem;
+  border-top: 2px solid #11114a;
+  padding: 1rem 0.2rem 0.5rem 0.2rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -72,7 +68,7 @@ export const StyledList = styled.ul`
     font-weight: bold;
     text-decoration: none;
     
-    &:hover {
+    &:hover, &:focus {
       border: 2px solid #11114a;
       border-radius: 10px;
     }

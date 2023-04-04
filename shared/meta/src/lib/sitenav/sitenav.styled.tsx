@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledSitenav = styled.nav`
   width: 100vw;
-  min-height: 3rem;
-  padding: 0.4rem 4rem;
+  min-height: 2rem;
+  padding: 0.6rem 4rem;
   background-color: #11114a;
   display: flex;
   flex-direction: column;
@@ -13,27 +13,16 @@ export const StyledSitenav = styled.nav`
 
   @media (min-width: 480px) {
     flex-direction: row;
+    justify-content: space-between;
     padding: 0.8rem 2rem;
   }
-
+  
   @media (min-width: 768px) {
-    justify-content: space-between;
+    padding: 0.8rem 8rem;
   }
 `;
 
-export const NavLeft = styled.div`
-  display: none;
-  min-width: 16rem;
-  height: 6rem;
-  margin: 0;
-  padding: 0;
-
-  @media (min-width: 768px) {
-    display: inherit;
-  }
-`;
-
-export const NavRight = styled.ul`
+export const SitenavLinks = styled.ul`
   display: inherit;
   list-style: none;
   min-width: 16rem;
@@ -44,19 +33,13 @@ export const NavRight = styled.ul`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
+  overflow: visible;
 
   @media (min-width: 480px) {
-    height: 6rem;
     justify-content: flex-end;
 
     li {
       overflow: visible;
-
-      a {
-        &:active, &.active {
-          animation: push-up 1s ease-out forwards;
-        }
-      }
     }
   }
 
@@ -87,24 +70,30 @@ export const NavRight = styled.ul`
   }
 `;
 
-export const HomeLink = styled(NavLink)`
-  background-color: #11114a;
+export const SitenavBrand = styled(NavLink)`
   display: flex;
   justify-content: center;
-  padding: 10px 0;
-
-  a {
-    margin: 10rem 0;
-  }
 
   span {
+    display: flex;
     background-color: whitesmoke;
     padding: 10px;
     border: 4px solid #e8ef3d;
     border-radius: 50%;
-    min-width: fit-content;
   }
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
+  &:active, &.active {
+    animation: push-up 1s ease-out forwards;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+  
+  &:focus-visible {
+    border-color: transparent;
+    border-bottom: #e8ef3d;
+  }
 `;
