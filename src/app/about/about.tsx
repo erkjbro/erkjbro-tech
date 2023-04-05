@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { type FC, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 import { StyledAbout } from "./about.styled";
@@ -10,6 +10,10 @@ export const loader = async (): Promise<string> => {
 
 export const About: FC = () => {
   const data = useLoaderData();
+
+  useEffect(() => {
+    document.title = `Erik J Brown | About`;
+  }, [])
 
   return (
     <StyledAbout>
