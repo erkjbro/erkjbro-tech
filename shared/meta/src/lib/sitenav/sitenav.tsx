@@ -1,4 +1,5 @@
-import { type FC } from "react";
+import { type FC, useContext } from "react";
+import { ThemeContext } from "styled-components";
 
 import Logo from "./assets/ejb-black-logo-v2.png";
 import { SitenavBrand, SitenavLinks, StyledNavLink, StyledSitenav } from "./sitenav.styled";
@@ -8,6 +9,10 @@ export interface SitenavProps {
 }
 
 const Sitenav: FC<SitenavProps> = (props) => {
+  const themeContext = useContext(ThemeContext);
+
+  console.log('Current theme: ', themeContext);
+
   return (
     <StyledSitenav>
       <SitenavBrand to="/">
