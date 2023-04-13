@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import { GlobalStyle } from "./main.styled";
 import { App } from "./app";
+import { StyledProvider } from "@erkjbro-tech/shared/ui-library";
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,6 +12,8 @@ const root = createRoot(
 root.render(
   <StrictMode>
     <GlobalStyle />
-    <App />
+    <StyledProvider>
+      <App />
+    </StyledProvider>
   </StrictMode>
 );

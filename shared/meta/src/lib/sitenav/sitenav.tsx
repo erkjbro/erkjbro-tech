@@ -11,7 +11,7 @@ export interface SitenavProps {
 const Sitenav: FC<SitenavProps> = (props) => {
   const themeContext = useContext(ThemeContext);
 
-  console.log('Current theme: ', themeContext);
+  console.log("Current theme: ", themeContext);
 
   return (
     <StyledSitenav>
