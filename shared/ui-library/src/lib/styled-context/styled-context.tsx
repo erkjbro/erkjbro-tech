@@ -42,10 +42,22 @@ const StyledProvider: FC<StyledProviderProps> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    const darkThemeMq: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+
     if (darkThemeMq.matches) {
       updateActiveTheme(ThemeOptions.Dark);
     }
+
+    const mqListener = (e: MediaQueryListEvent): void => {
+      console.log("System theme preference changed: ", e);
+      updateActiveTheme(e.matches ?
+        ThemeOptions.Dark : ThemeOptions.Light
+      );
+    };
+
+    darkThemeMq.addEventListener("change", mqListener);
+
+    return () => darkThemeMq.removeEventListener("change", mqListener);
   }, [updateActiveTheme]);
 
   const value = {
