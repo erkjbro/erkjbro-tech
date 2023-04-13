@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import type { FC } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
@@ -9,11 +9,12 @@ const router = createBrowserRouter(
   routes
 );
 
+// TODO: Handle with context so that the theme can be changed.
 const appTheme = {
   primary: "#11114a",
   secondary: "#e8ef3d",
-  background: "#f5f5f5ff",
-}
+  background: "#f5f5f5ff"
+};
 
 const App: FC = () => {
   return (
@@ -23,8 +24,7 @@ const App: FC = () => {
         fallbackElement={<Spinner />}
       />
     </ThemeProvider>
-
-  )
-}
+  );
+};
 
 export default App;
