@@ -45,7 +45,6 @@ const StyledProvider: FC<StyledProviderProps> = ({ children }) => {
   useEffect(() => {
     const darkThemeMq: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // TODO: Uncomment this when dark theme is ready
     if (darkThemeMq.matches) {
       updateActiveTheme(ThemeOptions.Dark);
     }
