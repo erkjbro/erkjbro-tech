@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledSitenav = styled.nav`
   width: 100vw;
   min-height: 2rem;
   padding: 0.6rem 4rem;
-  background-color: #11114a;
+  background-color: ${({ theme }) => theme.primary};
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -16,7 +16,7 @@ export const StyledSitenav = styled.nav`
     justify-content: space-between;
     padding: 0.8rem 2rem;
   }
-  
+
   @media (min-width: 768px) {
     padding: 0.8rem 8rem;
   }
@@ -47,13 +47,13 @@ export const SitenavLinks = styled.ul`
     text-decoration: none;
     display: inline-flex;
     align-self: center;
-    color: whitesmoke;
+    color: ${({ theme }) => theme.background};
     font-size: 1.2rem;
     font-weight: bold;
     padding: 0 1.2rem;
 
     &:hover, &:active, &.active {
-      color: #e8ef3d;
+      color: ${({ theme }) => theme.secondary};
     }
   }
 
@@ -76,9 +76,9 @@ export const SitenavBrand = styled(NavLink)`
 
   span {
     display: flex;
-    background-color: whitesmoke;
+    background-color: #e8e6e3;
     padding: 10px;
-    border: 4px solid #e8ef3d;
+    border: 4px solid ${({ theme }) => theme.secondary};
     border-radius: 50%;
   }
 `;
@@ -91,9 +91,9 @@ export const StyledNavLink = styled(NavLink)`
       animation: none;
     }
   }
-  
+
   &:focus-visible {
     border-color: transparent;
-    border-bottom: #e8ef3d;
-  }
+    border-bottom: ${({ theme }) => theme.secondary};
+  }           
 `;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { useLoaderData } from "react-router-dom";
 
 import { StyledAbout } from "./about.styled";
@@ -19,3 +19,5 @@ export const About: FC = () => {
     </StyledAbout>
   );
 }
+
+export default About;

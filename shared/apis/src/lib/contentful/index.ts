@@ -7,7 +7,7 @@ export enum ContentTypes {
   CONTACT = "place_id_here",
 }
 
-  export class ContentfulApi {
+export class ContentfulApi {
   private client: ContentfulClientApi;
   private readonly spaceId: string;
   private readonly accessToken: string;
