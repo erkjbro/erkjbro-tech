@@ -21,7 +21,7 @@ export const StyledFooter = styled.div`
 export const FooterContent = styled.ul`
   height: fit-content;  
   margin: 1.2rem 0.5rem;
-  border-top: 2px solid #11114a;
+  border-top: 2px solid ${({ theme }) => theme.primary}; 
   padding: 1rem 0.2rem 0.5rem 0.2rem;
   display: flex;
   flex-direction: column;
@@ -47,13 +47,13 @@ export const FooterContent = styled.ul`
     margin: 0.2rem 0;    
     border: 2px solid transparent;
     align-items: center;
-    color: #11114a;
+    color: ${({ theme }) => theme.primary};
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     
     &:hover, &:focus {
-      border: 2px solid #11114a;
+      border: 2px solid ${({ theme }) => theme.primary};
       border-radius: 10px;
     }
     

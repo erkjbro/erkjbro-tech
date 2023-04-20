@@ -13,8 +13,7 @@ interface StyledContextProps {
 
 const StyledContext = createContext<StyledContextProps>({
   activeTheme: ThemeOptions.Light,
-  updateActiveTheme: () => { /* do nothing */
-  }
+  updateActiveTheme: () => { /* do nothing */ }
 });
 
 const themes = {
@@ -44,9 +43,10 @@ const StyledProvider: FC<StyledProviderProps> = ({ children }) => {
   useEffect(() => {
     const darkThemeMq: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (darkThemeMq.matches) {
-      updateActiveTheme(ThemeOptions.Dark);
-    }
+    // TODO: Uncomment this when dark theme is ready
+    // if (darkThemeMq.matches) {
+    //   updateActiveTheme(ThemeOptions.Dark);
+    // }
 
     const mqListener = (e: MediaQueryListEvent): void => {
       console.log("System theme preference changed: ", e);

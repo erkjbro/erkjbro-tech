@@ -23,12 +23,12 @@ export const PortfolioContent = styled.div`
   
   p a {
     text-decoration: underline;
-    color: #11114a;
+    color: ${({ theme }) => theme.primary}; 
     
     &:hover, &:focus {
       text-decoration: none;
       text-transform: capitalize;
-      color: blue;      
+      color: ${({ theme }) => theme.background};
     }
   }
 `;
