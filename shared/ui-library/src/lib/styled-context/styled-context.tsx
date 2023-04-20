@@ -1,6 +1,8 @@
 import { createContext, type FC, type ReactNode, useCallback, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 
+import { THEMES } from "./constants";
+
 enum ThemeOptions {
   Light = "light",
   Dark = "dark"
@@ -15,21 +17,6 @@ const StyledContext = createContext<StyledContextProps>({
   activeTheme: ThemeOptions.Light,
   updateActiveTheme: () => { /* do nothing */ }
 });
-
-const themes = {
-  light: {
-    primary: "#11114a",
-    secondary: "#e8ef3d",
-    text: "#181a1b",
-    background: "#e8e6e3"
-  },
-  dark: {
-    primary: "#e8ef3d",
-    secondary: "#0657ac",
-    text: "#e8e6e3",
-    background: "#181a1b"
-  }
-};
 
 interface StyledProviderProps {
   children: ReactNode;
@@ -69,7 +56,7 @@ const StyledProvider: FC<StyledProviderProps> = ({ children }) => {
 
   return (
     <StyledContext.Provider value={value}>
-      <ThemeProvider theme={themes[activeTheme]}>
+      <ThemeProvider theme={THEMES[activeTheme]}>
         {children}
       </ThemeProvider>
     </StyledContext.Provider>

@@ -10,7 +10,7 @@ export interface SpinnerProps {
 export const Spinner: FC<SpinnerProps> = () => (
   <StyledSpinner>
     <HashLoader
-      color={"#11114a"}
+      color={"#0657ac"} // TODO: use theme color
       loading={true}
       size={100}
       aria-label="Loading Spinner"
