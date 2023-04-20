@@ -6,6 +6,8 @@ export const StyledLayout = styled.div`
   justify-content: space-between;
   text-align: center;
   min-height: 100vh;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const LayoutBody = styled.div`

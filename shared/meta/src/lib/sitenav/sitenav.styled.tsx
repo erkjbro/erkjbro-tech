@@ -76,7 +76,7 @@ export const SitenavBrand = styled(NavLink)`
 
   span {
     display: flex;
-    background-color: ${({ theme }) => theme.background};
+    background-color: #e8e6e3;
     padding: 10px;
     border: 4px solid ${({ theme }) => theme.secondary};
     border-radius: 50%;
@@ -95,5 +95,5 @@ export const StyledNavLink = styled(NavLink)`
   &:focus-visible {
     border-color: transparent;
     border-bottom: ${({ theme }) => theme.secondary};
-  }
+  }           
 `;

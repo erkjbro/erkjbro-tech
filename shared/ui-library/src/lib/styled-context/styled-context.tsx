@@ -20,12 +20,14 @@ const themes = {
   light: {
     primary: "#11114a",
     secondary: "#e8ef3d",
-    background: "#f5f5f5ff"
+    text: "#181a1b",
+    background: "#e8e6e3"
   },
   dark: {
     primary: "#e8ef3d",
-    secondary: "#11114a",
-    background: "#f5f5f5ff"
+    secondary: "#0657ac",
+    text: "#e8e6e3",
+    background: "#181a1b"
   }
 };
 
@@ -44,9 +46,9 @@ const StyledProvider: FC<StyledProviderProps> = ({ children }) => {
     const darkThemeMq: MediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
     // TODO: Uncomment this when dark theme is ready
-    // if (darkThemeMq.matches) {
-    //   updateActiveTheme(ThemeOptions.Dark);
-    // }
+    if (darkThemeMq.matches) {
+      updateActiveTheme(ThemeOptions.Dark);
+    }
 
     const mqListener = (e: MediaQueryListEvent): void => {
       console.log("System theme preference changed: ", e);

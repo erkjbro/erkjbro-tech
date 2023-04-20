@@ -28,7 +28,6 @@ export const PortfolioContent = styled.div`
     &:hover, &:focus {
       text-decoration: none;
       text-transform: capitalize;
-      color: ${({ theme }) => theme.background};
     }
   }
 `;
