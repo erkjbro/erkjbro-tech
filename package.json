@@ -8,8 +8,10 @@
     "http-server": "http-server dist/apps/erkjbro-tech",
     "build": "nx build",
     "test": "nx test",
+    "affected:test": "nx affected:test",
     "e2e": "nx run e2e:e2e",
-    "lint": "nx lint"
+    "lint": "nx lint",
+    "affected:lint": "nx affected:lint"
   },
   "private": true,
   "dependencies": {
