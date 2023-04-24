@@ -1,16 +1,17 @@
 import type { FC, ReactNode } from "react";
 
 import { StyledFooter, FooterContent} from "./footer.styled";
-import { LINK_DATA } from "./footer.data";
+import { ContactFields } from "@erkjbro-tech/shared/apis";
 
-/* eslint-disable-next-line */
-export interface FooterProps {}
+export interface FooterProps {
+  links: ContactFields[];
+}
 
-const Footer: FC<FooterProps> = (props) => {
+const Footer: FC<FooterProps> = ({ links }) => {
   return (
     <StyledFooter>
       <FooterContent>
-        {LINK_DATA.map((fields, i) => (
+        {links.map((fields, i) => (
           <HtmlLink key={i} {...fields} />
         ))}
       </FooterContent>

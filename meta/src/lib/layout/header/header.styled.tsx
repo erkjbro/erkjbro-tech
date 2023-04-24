@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const StyledSitenav = styled.nav`
+export const StyledNav = styled.nav`
   width: 100vw;
   min-height: 2rem;
   padding: 0.6rem 4rem;
@@ -22,7 +22,7 @@ export const StyledSitenav = styled.nav`
   }
 `;
 
-export const SitenavLinks = styled.ul`
+export const NavLinks = styled.ul`
   display: inherit;
   list-style: none;
   min-width: 16rem;
@@ -70,7 +70,7 @@ export const SitenavLinks = styled.ul`
   }
 `;
 
-export const SitenavBrand = styled(NavLink)`
+export const SiteBrand = styled(NavLink)`
   display: flex;
   justify-content: center;
 
