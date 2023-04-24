@@ -6,7 +6,7 @@ import dts from 'vite-plugin-dts';
 import { join } from 'path';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/shared-ui-library',
+  cacheDir: '../../node_modules/.vite/shared-ui',
 
   plugins: [
     dts({
@@ -35,10 +35,10 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'shared-ui-library',
+      name: 'shared-ui',
       fileName: 'index',
       // Change this to the formats you want to support.
-      // Don't forgot to update your package.json as well.
+      // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
     rollupOptions: {

@@ -4,11 +4,7 @@ import { ThemeContext } from "styled-components";
 import Logo from "./assets/ejb-black-logo-v2.png";
 import { NavLinks, SiteBrand, StyledNav, StyledNavLink } from "./header.styled";
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
-export interface HeaderProps {
-}
-
-const Header: FC<HeaderProps> = (props) => {
+const Header: FC = () => {
   const themeContext = useContext(ThemeContext);
 
   useEffect(() => (

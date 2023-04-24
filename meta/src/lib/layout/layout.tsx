@@ -4,7 +4,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 import Header from "./header/header";
 import Footer from "./footer/footer";
 import { LayoutBody, StyledLayout } from "./layout.styled";
-import { Spinner } from "@erkjbro-tech/shared/ui-library";
+import { Spinner } from "@erkjbro-tech/shared/ui";
 import { LINK_DATA } from "./links.data";
 
 export const Layout: FC = () => {
