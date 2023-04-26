@@ -1,7 +1,7 @@
 {
-  "name": "shared-meta",
+  "name": "shared-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "shared/meta/src",
+  "sourceRoot": "shared/ui/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,7 +9,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["shared/meta/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["shared/ui/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
@@ -17,7 +17,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/shared/meta"
+        "outputPath": "dist/shared/ui"
       },
       "configurations": {
         "development": {
@@ -30,10 +30,10 @@
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/shared/meta"],
+      "outputs": ["coverage/shared/ui"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/shared/meta"
+        "reportsDirectory": "../../coverage/shared/ui"
       }
     }
   }

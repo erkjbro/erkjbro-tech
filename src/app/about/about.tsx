@@ -5,8 +5,8 @@ import { StyledAbout } from "./about.styled";
 
 export const loader = async (): Promise<string> => {
   await new Promise((r) => setTimeout(r, 500));
-  return "Loader should be handling async data fetching...";
-}
+  return "Loader should be handling async data fetching... but it's not.";
+};
 
 export const About: FC = () => {
   const data = useLoaderData();
@@ -18,6 +18,6 @@ export const About: FC = () => {
       <p>{`${data}`}</p>
     </StyledAbout>
   );
-}
+};
 
 export default About;

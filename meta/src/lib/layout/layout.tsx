@@ -1,9 +1,11 @@
 import { FC } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 
-import { Sitenav, Footer } from "../..";
-import { StyledLayout, LayoutBody } from "./layout.styled";
-import { Spinner } from "@erkjbro-tech/shared/ui-library";
+import Header from "./header/header";
+import Footer from "./footer/footer";
+import { LayoutBody, StyledLayout } from "./layout.styled";
+import { Spinner } from "@erkjbro-tech/shared/ui";
+import { LINK_DATA } from "./links.data";
 
 export const Layout: FC = () => {
   const navigation = useNavigation();
@@ -13,15 +15,15 @@ export const Layout: FC = () => {
       return <Spinner />;
     }
     return <Outlet />;
-  }
+  };
 
   return (
     <StyledLayout>
-      <Sitenav />
+      <Header />
       <LayoutBody>
         <BodyContent />
       </LayoutBody>
-      <Footer />
+      <Footer links={LINK_DATA} />
     </StyledLayout>
   );
 };

@@ -5,11 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { PortfolioContent, StyledPortfolio } from "./portfolio.styled";
 import type { StaticPageFields } from "@erkjbro-tech/shared/apis";
 
-/* eslint-disable-next-line  @typescript-eslint/no-empty-interface */
-export interface PortfolioProps {
-}
-
-const Portfolio: FC<PortfolioProps> = (props) => {
+const Portfolio: FC = () => {
   const data = useLoaderData() as { payload: StaticPageFields};
 
   return (

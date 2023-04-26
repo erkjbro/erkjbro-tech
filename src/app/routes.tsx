@@ -3,7 +3,7 @@ import { Outlet, type RouteObject, useRouteError } from "react-router-dom";
 
 import Portfolio from "./portfolio/portfolio";
 import { portfolioLoader } from './portfolio/portfolio-store';
-import { Layout } from "@erkjbro-tech/shared/meta";
+import { Layout } from "@erkjbro-tech/meta";
 
 const RootErrorBoundary: FC = () => {
   const error = useRouteError() as Error;

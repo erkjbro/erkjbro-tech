@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Sitenav from './sitenav';
+import Header from './header';
 
 describe('Sitenav', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Router><Sitenav /></Router>);
+    const { baseElement } = render(<Router><Header /></Router>);
     expect(baseElement).toBeTruthy();
   });
 });
