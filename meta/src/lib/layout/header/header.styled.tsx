@@ -34,6 +34,9 @@ export const NavLinks = styled.ul`
   align-content: center;
   justify-content: space-evenly;
   overflow: visible;
+  color: ${({ theme }) => theme.background};
+  font-size: 1.2rem;
+  font-weight: bold;
 
   @media (min-width: 480px) {
     justify-content: flex-end;
@@ -47,9 +50,7 @@ export const NavLinks = styled.ul`
     text-decoration: none;
     display: inline-flex;
     align-self: center;
-    color: ${({ theme }) => theme.background};
-    font-size: 1.2rem;
-    font-weight: bold;
+    color: ${({ theme }) => theme.background};    
     padding: 0 1.2rem;
 
     &:hover, &:active, &.active {
@@ -85,10 +86,10 @@ export const SiteBrand = styled(NavLink)`
 
 export const StyledNavLink = styled(NavLink)`
   &:active, &.active {
-    animation: push-up 1s ease-out forwards;
+    animation: none;
 
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
+    @media (prefers-reduced-motion: no-preference) and (min-width: 480px) {
+      animation: push-up 1s ease-out forwards;
     }
   }
 
