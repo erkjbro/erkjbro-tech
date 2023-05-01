@@ -10,11 +10,13 @@ enum ThemeOptions {
 
 interface StyledContextProps {
   activeTheme: ThemeOptions;
+  ThemeOptions: typeof ThemeOptions;
   updateActiveTheme: (newTheme: ThemeOptions) => void;
 }
 
 const StyledContext = createContext<StyledContextProps>({
   activeTheme: ThemeOptions.Light,
+  ThemeOptions,
   updateActiveTheme: () => { /* do nothing */ }
 });
 
