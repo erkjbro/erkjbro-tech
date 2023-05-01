@@ -2,7 +2,8 @@ import { FC } from "react";
 import { Outlet, type RouteObject, useRouteError } from "react-router-dom";
 
 import Portfolio from "./portfolio/portfolio";
-import { Layout } from "@erkjbro-tech/shared/meta";
+import { portfolioLoader } from './portfolio/portfolio-store';
+import { Layout } from "@erkjbro-tech/meta";
 
 const RootErrorBoundary: FC = () => {
   const error = useRouteError() as Error;
@@ -32,6 +33,7 @@ export const routes: RouteObject[] = [
         children: [
           {
             index: true,
+            loader: portfolioLoader,
             element: <Portfolio />
           },
           {
