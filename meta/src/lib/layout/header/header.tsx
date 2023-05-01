@@ -3,7 +3,7 @@ import { ThemeContext } from "styled-components";
 
 import { StyledContext } from "@erkjbro-tech/shared/ui";
 import Logo from "./assets/ejb-black-logo-v2.png";
-import { NavLinks, SiteBrand, StyledNav, StyledNavLink } from "./header.styled";
+import { NavLinks, SiteBrand, StyledNav, StyledNavLink, ThemeToggle } from "./header.styled";
 
 const Header: FC = () => {
   const themeContext = useContext(ThemeContext);
@@ -27,16 +27,6 @@ const Header: FC = () => {
       </SiteBrand>
 
       <NavLinks>
-        <label htmlFor={"darkmode-toggle"}>
-          Dark Mode:
-          &nbsp;
-          <input
-            type={"checkbox"}
-            id={"darkmode-toggle"}
-            checked={activeTheme === ThemeOptions.Dark}
-            onClick={handleThemeUpdate}
-          />
-        </label>
         <li>
           <StyledNavLink to="/">
             Portfolio
@@ -48,6 +38,17 @@ const Header: FC = () => {
           </StyledNavLink>
         </li>
       </NavLinks>
+
+      <ThemeToggle htmlFor={"darkmode-toggle"}>
+        Dark Mode
+        &nbsp;
+        <input
+          type={"checkbox"}
+          id={"darkmode-toggle"}
+          checked={activeTheme === ThemeOptions.Dark}
+          onChange={handleThemeUpdate}
+        />
+      </ThemeToggle>
     </StyledNav>
   );
 };

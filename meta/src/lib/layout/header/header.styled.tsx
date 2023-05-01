@@ -27,6 +27,7 @@ export const NavLinks = styled.ul`
   list-style: none;
   min-width: 16rem;
   min-height: 3rem;
+  width: 100%;
   height: fit-content;
   margin: 0;
   padding: 0;
@@ -34,12 +35,11 @@ export const NavLinks = styled.ul`
   align-content: center;
   justify-content: space-evenly;
   overflow: visible;
-  color: ${({ theme }) => theme.background};
-  font-size: 1.2rem;
-  font-weight: bold;
+
 
   @media (min-width: 480px) {
     justify-content: flex-end;
+    width: 70%;    
 
     li {
       overflow: visible;
@@ -50,7 +50,9 @@ export const NavLinks = styled.ul`
     text-decoration: none;
     display: inline-flex;
     align-self: center;
-    color: ${({ theme }) => theme.background};    
+    color: ${({ theme }) => theme.background};
+    font-size: 1.2rem;
+    font-weight: bold;
     padding: 0 1.2rem;
 
     &:hover, &:active, &.active {
@@ -71,9 +73,28 @@ export const NavLinks = styled.ul`
   }
 `;
 
+export const ThemeToggle = styled.label`
+  display: flex;
+  min-width: fit-content;
+  margin: 0 0.8rem;
+  color: ${({ theme }) => theme.background};
+  font-weight: bold;
+
+  input {
+    align-self: flex-end;
+  }
+  
+  @media (min-width: 480px) {
+    input {
+      align-self: center;
+    }
+  }
+`;
+
 export const SiteBrand = styled(NavLink)`
   display: flex;
   justify-content: center;
+  min-width: fit-content;
 
   span {
     display: flex;
