@@ -3,13 +3,14 @@
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "./src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/vite:build",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/erkjbro-tech"
+        "outputPath": "dist"
       },
       "configurations": {
         "development": {
@@ -21,7 +22,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/vite:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "erkjbro-tech:build"
@@ -38,7 +39,7 @@
       }
     },
     "preview": {
-      "executor": "@nrwl/vite:preview-server",
+      "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "erkjbro-tech:build"
@@ -53,20 +54,18 @@
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/erkjbro-tech"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{projectRoot}/coverage/erkjbro-tech"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "coverage/erkjbro-tech"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["{projectRoot}/src"]
       }
     }
-  },
-  "tags": []
+  }
 }
