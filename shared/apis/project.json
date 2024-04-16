@@ -3,9 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "shared/apis/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
+      "executor": "@nx/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/./shared/apis",
@@ -15,20 +16,16 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["shared/apis/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/shared/apis"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/shared/apis"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/shared/apis"
       }
     }
-  },
-  "tags": []
+  }
 }
